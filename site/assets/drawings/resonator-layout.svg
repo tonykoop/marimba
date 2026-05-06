@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 720" width="1120" height="720" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1120" height="720" fill="white" stroke="black"/>
+  <text x="32" y="40" font-size="20" font-weight="bold">Marimba Resonator Layout - C3 to C6</text>
+  <text x="32" y="62" font-size="12" fill="#444">Quarter-wave first-pass lengths from family-spec.csv. Tube bore is still a sourcing-dependent variable.</text>
+
+  <line x1="170" y1="94" x2="170" y2="650" stroke="#999"/>
+  <line x1="170" y1="650" x2="1060" y2="650" stroke="#999"/>
+  <text x="158" y="670" font-size="11" text-anchor="end">0 in</text>
+  <text x="530" y="690" font-size="11" text-anchor="middle">relative tube length, longest C3 = 24.260 in</text>
+
+  <g fill="#d8edf7" stroke="#1b4d66">
+    <rect x="170" y="98" width="890" height="10"/><text x="32" y="108" font-size="10">C3 24.260 in</text>
+    <rect x="170" y="113" width="836" height="10"/><text x="32" y="123" font-size="10">C#3 22.806 in</text>
+    <rect x="170" y="128" width="787" height="10"/><text x="32" y="138" font-size="10">D3 21.434 in</text>
+    <rect x="170" y="143" width="739" height="10"/><text x="32" y="153" font-size="10">D#3 20.139 in</text>
+    <rect x="170" y="158" width="694" height="10"/><text x="32" y="168" font-size="10">E3 18.917 in</text>
+    <rect x="170" y="173" width="651" height="10"/><text x="32" y="183" font-size="10">F3 17.763 in</text>
+    <rect x="170" y="188" width="612" height="10"/><text x="32" y="198" font-size="10">F#3 16.674 in</text>
+    <rect x="170" y="203" width="574" height="10"/><text x="32" y="213" font-size="10">G3 15.646 in</text>
+    <rect x="170" y="218" width="539" height="10"/><text x="32" y="228" font-size="10">G#3 14.676 in</text>
+    <rect x="170" y="233" width="505" height="10"/><text x="32" y="243" font-size="10">A3 13.760 in</text>
+    <rect x="170" y="248" width="473" height="10"/><text x="32" y="258" font-size="10">A#3 12.896 in</text>
+    <rect x="170" y="263" width="443" height="10"/><text x="32" y="273" font-size="10">B3 12.080 in</text>
+    <rect x="170" y="278" width="422" height="10"/><text x="32" y="288" font-size="10">C4 11.515 in</text>
+    <rect x="170" y="293" width="396" height="10"/><text x="32" y="303" font-size="10">C#4 10.788 in</text>
+    <rect x="170" y="308" width="371" height="10"/><text x="32" y="318" font-size="10">D4 10.102 in</text>
+    <rect x="170" y="323" width="347" height="10"/><text x="32" y="333" font-size="10">D#4 9.454 in</text>
+    <rect x="170" y="338" width="324" height="10"/><text x="32" y="348" font-size="10">E4 8.843 in</text>
+    <rect x="170" y="353" width="303" height="10"/><text x="32" y="363" font-size="10">F4 8.266 in</text>
+    <rect x="170" y="368" width="283" height="10"/><text x="32" y="378" font-size="10">F#4 7.722 in</text>
+    <rect x="170" y="383" width="264" height="10"/><text x="32" y="393" font-size="10">G4 7.208 in</text>
+    <rect x="170" y="398" width="247" height="10"/><text x="32" y="408" font-size="10">G#4 6.723 in</text>
+    <rect x="170" y="413" width="230" height="10"/><text x="32" y="423" font-size="10">A4 6.265 in</text>
+    <rect x="170" y="428" width="214" height="10"/><text x="32" y="438" font-size="10">A#4 5.833 in</text>
+    <rect x="170" y="443" width="199" height="10"/><text x="32" y="453" font-size="10">B4 5.425 in</text>
+    <rect x="170" y="458" width="193" height="10"/><text x="32" y="468" font-size="10">C5 5.245 in</text>
+    <rect x="170" y="473" width="179" height="10"/><text x="32" y="483" font-size="10">C#5 4.881 in</text>
+    <rect x="170" y="488" width="167" height="10"/><text x="32" y="498" font-size="10">D5 4.538 in</text>
+    <rect x="170" y="503" width="155" height="10"/><text x="32" y="513" font-size="10">D#5 4.215 in</text>
+    <rect x="170" y="518" width="143" height="10"/><text x="32" y="528" font-size="10">E5 3.909 in</text>
+    <rect x="170" y="533" width="133" height="10"/><text x="32" y="543" font-size="10">F5 3.621 in</text>
+    <rect x="170" y="548" width="123" height="10"/><text x="32" y="558" font-size="10">F#5 3.348 in</text>
+    <rect x="170" y="563" width="113" height="10"/><text x="32" y="573" font-size="10">G5 3.091 in</text>
+    <rect x="170" y="578" width="105" height="10"/><text x="32" y="588" font-size="10">G#5 2.849 in</text>
+    <rect x="170" y="593" width="96" height="10"/><text x="32" y="603" font-size="10">A5 2.620 in</text>
+    <rect x="170" y="608" width="88" height="10"/><text x="32" y="618" font-size="10">A#5 2.404 in</text>
+    <rect x="170" y="623" width="81" height="10"/><text x="32" y="633" font-size="10">B5 2.200 in</text>
+    <rect x="170" y="638" width="81" height="10"/><text x="32" y="648" font-size="10">C6 2.212 in</text>
+  </g>
+
+  <rect x="780" y="92" width="300" height="104" fill="#fafafa" stroke="#333"/>
+  <text x="796" y="118" font-size="12" font-weight="bold">Formula</text>
+  <text x="796" y="140" font-size="11">L_res = 13552 / (4 f) - 0.82 bore</text>
+  <text x="796" y="160" font-size="11">Cut long, then trim after bar tuning.</text>
+  <text x="796" y="180" font-size="11">Update bore after sourcing real tube ID.</text>
+</svg>

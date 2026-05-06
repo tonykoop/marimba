@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 3880" width="1100" height="3880" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="1100" height="3880" fill="white" stroke="black" stroke-width="1"/>
+<text x="32" y="36" font-size="18" font-weight="bold">Marimba Design Packet - Family overview</text>
+<text x="32" y="56" font-size="11" fill="#444">37 members. Drawn to relative scale; longest member = 32.25". Governing model: free-free-beam.</text>
+<text x="32" y="110" font-size="13" font-weight="bold">MAR-C3</text>
+<text x="32" y="130" font-size="10" fill="#666">C3 (130.8 Hz)</text>
+<text x="32" y="146" font-size="10" fill="#666">L = 32.251"</text>
+<rect x="200" y="108" width="820.0" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="1028.0" y="118" font-size="9" fill="#444">32.25"</text>
+<text x="32" y="210" font-size="13" font-weight="bold">MAR-Csharp3</text>
+<text x="32" y="230" font-size="10" fill="#666">C#3 (138.6 Hz)</text>
+<text x="32" y="246" font-size="10" fill="#666">L = 31.333"</text>
+<rect x="200" y="208" width="796.659328392918" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="1004.659328392918" y="218" font-size="9" fill="#444">31.33"</text>
+<text x="32" y="310" font-size="13" font-weight="bold">MAR-D3</text>
+<text x="32" y="330" font-size="10" fill="#666">D3 (146.8 Hz)</text>
+<text x="32" y="346" font-size="10" fill="#666">L = 30.441"</text>
+<rect x="200" y="308" width="773.9797215590214" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="981.9797215590214" y="318" font-size="9" fill="#444">30.44"</text>
+<text x="32" y="410" font-size="13" font-weight="bold">MAR-Dsharp3</text>
+<text x="32" y="430" font-size="10" fill="#666">D#3 (155.6 Hz)</text>
+<text x="32" y="446" font-size="10" fill="#666">L = 29.575"</text>
+<rect x="200" y="408" width="751.9611794983102" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="959.9611794983102" y="418" font-size="9" fill="#444">29.57"</text>
+<text x="32" y="510" font-size="13" font-weight="bold">MAR-E3</text>
+<text x="32" y="530" font-size="10" fill="#666">E3 (164.8 Hz)</text>
+<text x="32" y="546" font-size="10" fill="#666">L = 28.733"</text>
+<rect x="200" y="508" width="730.5528510743853" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="938.5528510743853" y="518" font-size="9" fill="#444">28.73"</text>
+<text x="32" y="610" font-size="13" font-weight="bold">MAR-F3</text>
+<text x="32" y="630" font-size="10" fill="#666">F3 (174.6 Hz)</text>
+<text x="32" y="646" font-size="10" fill="#666">L = 27.915"</text>
+<rect x="200" y="608" width="709.7547362872469" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="917.7547362872469" y="618" font-size="9" fill="#444">27.91"</text>
+<text x="32" y="710" font-size="13" font-weight="bold">MAR-Fsharp3</text>
+<text x="32" y="730" font-size="10" fill="#666">F#3 (185.0 Hz)</text>
+<text x="32" y="746" font-size="10" fill="#666">L = 27.120"</text>
+<rect x="200" y="708" width="689.5414095686956" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="897.5414095686956" y="718" font-size="9" fill="#444">27.12"</text>
+<text x="32" y="810" font-size="13" font-weight="bold">MAR-G3</text>
+<text x="32" y="830" font-size="10" fill="#666">G3 (196.0 Hz)</text>
+<text x="32" y="846" font-size="10" fill="#666">L = 26.348"</text>
+<rect x="200" y="808" width="669.9128709187312" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="877.9128709187312" y="818" font-size="9" fill="#444">26.35"</text>
+<text x="32" y="910" font-size="13" font-weight="bold">MAR-Gsharp3</text>
+<text x="32" y="930" font-size="10" fill="#666">G#3 (207.7 Hz)</text>
+<text x="32" y="946" font-size="10" fill="#666">L = 25.598"</text>
+<rect x="200" y="908" width="650.8436947691545" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="858.8436947691545" y="918" font-size="9" fill="#444">25.60"</text>
+<text x="32" y="1010" font-size="13" font-weight="bold">MAR-A3</text>
+<text x="32" y="1030" font-size="10" fill="#666">A3 (220.0 Hz)</text>
+<text x="32" y="1046" font-size="10" fill="#666">L = 24.869"</text>
+<rect x="200" y="1008" width="632.3084555517659" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="840.3084555517659" y="1018" font-size="9" fill="#444">24.87"</text>
+<text x="32" y="1110" font-size="13" font-weight="bold">MAR-Asharp3</text>
+<text x="32" y="1130" font-size="10" fill="#666">A#3 (233.1 Hz)</text>
+<text x="32" y="1146" font-size="10" fill="#666">L = 24.161"</text>
+<rect x="200" y="1108" width="614.3071532665655" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="822.3071532665655" y="1118" font-size="9" fill="#444">24.16"</text>
+<text x="32" y="1210" font-size="13" font-weight="bold">MAR-B3</text>
+<text x="32" y="1230" font-size="10" fill="#666">B3 (246.9 Hz)</text>
+<text x="32" y="1246" font-size="10" fill="#666">L = 23.473"</text>
+<rect x="200" y="1208" width="596.8143623453536" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="804.8143623453536" y="1218" font-size="9" fill="#444">23.47"</text>
+<text x="32" y="1310" font-size="13" font-weight="bold">MAR-C4</text>
+<text x="32" y="1330" font-size="10" fill="#666">C4 (261.6 Hz)</text>
+<text x="32" y="1346" font-size="10" fill="#666">L = 22.805"</text>
+<rect x="200" y="1308" width="579.8300827881307" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="787.8300827881307" y="1318" font-size="9" fill="#444">22.80"</text>
+<text x="32" y="1410" font-size="13" font-weight="bold">MAR-Csharp4</text>
+<text x="32" y="1430" font-size="10" fill="#666">C#4 (277.2 Hz)</text>
+<text x="32" y="1446" font-size="10" fill="#666">L = 22.156"</text>
+<rect x="200" y="1408" width="563.3288890266969" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="771.3288890266969" y="1418" font-size="9" fill="#444">22.16"</text>
+<text x="32" y="1510" font-size="13" font-weight="bold">MAR-D4</text>
+<text x="32" y="1530" font-size="10" fill="#666">D4 (293.7 Hz)</text>
+<text x="32" y="1546" font-size="10" fill="#666">L = 21.525"</text>
+<rect x="200" y="1508" width="547.2853554928529" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="755.2853554928529" y="1518" font-size="9" fill="#444">21.52"</text>
+<text x="32" y="1610" font-size="13" font-weight="bold">MAR-Dsharp4</text>
+<text x="32" y="1630" font-size="10" fill="#666">D#4 (311.1 Hz)</text>
+<text x="32" y="1646" font-size="10" fill="#666">L = 20.912"</text>
+<rect x="200" y="1608" width="531.6994821865989" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="739.6994821865989" y="1618" font-size="9" fill="#444">20.91"</text>
+<text x="32" y="1710" font-size="13" font-weight="bold">MAR-E4</text>
+<text x="32" y="1730" font-size="10" fill="#666">E4 (329.6 Hz)</text>
+<text x="32" y="1746" font-size="10" fill="#666">L = 20.317"</text>
+<rect x="200" y="1708" width="516.5712691079347" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="724.5712691079347" y="1718" font-size="9" fill="#444">20.32"</text>
+<text x="32" y="1810" font-size="13" font-weight="bold">MAR-F4</text>
+<text x="32" y="1830" font-size="10" fill="#666">F4 (349.2 Hz)</text>
+<text x="32" y="1846" font-size="10" fill="#666">L = 19.739"</text>
+<rect x="200" y="1808" width="501.87529068866087" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="709.8752906886609" y="1818" font-size="9" fill="#444">19.74"</text>
+<text x="32" y="1910" font-size="13" font-weight="bold">MAR-Fsharp4</text>
+<text x="32" y="1930" font-size="10" fill="#666">F#4 (370.0 Hz)</text>
+<text x="32" y="1946" font-size="10" fill="#666">L = 19.177"</text>
+<rect x="200" y="1908" width="487.586121360578" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="695.586121360578" y="1918" font-size="9" fill="#444">19.18"</text>
+<text x="32" y="2010" font-size="13" font-weight="bold">MAR-G4</text>
+<text x="32" y="2030" font-size="10" fill="#666">G4 (392.0 Hz)</text>
+<text x="32" y="2046" font-size="10" fill="#666">L = 18.631"</text>
+<rect x="200" y="2008" width="473.7037611236861" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="681.703761123686" y="2018" font-size="9" fill="#444">18.63"</text>
+<text x="32" y="2110" font-size="13" font-weight="bold">MAR-Gsharp4</text>
+<text x="32" y="2130" font-size="10" fill="#666">G#4 (415.3 Hz)</text>
+<text x="32" y="2146" font-size="10" fill="#666">L = 18.100"</text>
+<rect x="200" y="2108" width="460.2027844097858" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="668.2027844097859" y="2118" font-size="9" fill="#444">18.10"</text>
+<text x="32" y="2210" font-size="13" font-weight="bold">MAR-A4</text>
+<text x="32" y="2230" font-size="10" fill="#666">A4 (440.0 Hz)</text>
+<text x="32" y="2246" font-size="10" fill="#666">L = 17.585"</text>
+<rect x="200" y="2208" width="447.1086167870764" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="655.1086167870765" y="2218" font-size="9" fill="#444">17.59"</text>
+<text x="32" y="2310" font-size="13" font-weight="bold">MAR-Asharp4</text>
+<text x="32" y="2330" font-size="10" fill="#666">A#4 (466.2 Hz)</text>
+<text x="32" y="2346" font-size="10" fill="#666">L = 17.085"</text>
+<rect x="200" y="2308" width="434.3958326873586" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="642.3958326873586" y="2318" font-size="9" fill="#444">17.09"</text>
+<text x="32" y="2410" font-size="13" font-weight="bold">MAR-B4</text>
+<text x="32" y="2430" font-size="10" fill="#666">B4 (493.9 Hz)</text>
+<text x="32" y="2446" font-size="10" fill="#666">L = 16.598"</text>
+<rect x="200" y="2408" width="422.0135809742333" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="630.0135809742333" y="2418" font-size="9" fill="#444">16.60"</text>
+<text x="32" y="2510" font-size="13" font-weight="bold">MAR-C5</text>
+<text x="32" y="2530" font-size="10" fill="#666">C5 (523.3 Hz)</text>
+<text x="32" y="2546" font-size="10" fill="#666">L = 16.126"</text>
+<rect x="200" y="2508" width="410.01271278409973" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="618.0127127840997" y="2518" font-size="9" fill="#444">16.13"</text>
+<text x="32" y="2610" font-size="13" font-weight="bold">MAR-Csharp5</text>
+<text x="32" y="2630" font-size="10" fill="#666">C#5 (554.4 Hz)</text>
+<text x="32" y="2646" font-size="10" fill="#666">L = 15.667"</text>
+<rect x="200" y="2608" width="398.34237698055875" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="606.3423769805588" y="2618" font-size="9" fill="#444">15.67"</text>
+<text x="32" y="2710" font-size="13" font-weight="bold">MAR-D5</text>
+<text x="32" y="2730" font-size="10" fill="#666">D5 (587.3 Hz)</text>
+<text x="32" y="2746" font-size="10" fill="#666">L = 15.221"</text>
+<rect x="200" y="2708" width="387.00257356361044" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="595.0025735636104" y="2718" font-size="9" fill="#444">15.22"</text>
+<text x="32" y="2810" font-size="13" font-weight="bold">MAR-Dsharp5</text>
+<text x="32" y="2830" font-size="10" fill="#666">D#5 (622.3 Hz)</text>
+<text x="32" y="2846" font-size="10" fill="#666">L = 14.787"</text>
+<rect x="200" y="2808" width="375.9678769650554" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="583.9678769650554" y="2818" font-size="9" fill="#444">14.79"</text>
+<text x="32" y="2910" font-size="13" font-weight="bold">MAR-E5</text>
+<text x="32" y="2930" font-size="10" fill="#666">E5 (659.3 Hz)</text>
+<text x="32" y="2946" font-size="10" fill="#666">L = 14.366"</text>
+<rect x="200" y="2908" width="365.263712753093" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="573.2637127530929" y="2918" font-size="9" fill="#444">14.37"</text>
+<text x="32" y="3010" font-size="13" font-weight="bold">MAR-F5</text>
+<text x="32" y="3030" font-size="10" fill="#666">F5 (698.5 Hz)</text>
+<text x="32" y="3046" font-size="10" fill="#666">L = 13.957"</text>
+<rect x="200" y="3008" width="354.8646553595238" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="562.8646553595238" y="3018" font-size="9" fill="#444">13.96"</text>
+<text x="32" y="3110" font-size="13" font-weight="bold">MAR-Fsharp5</text>
+<text x="32" y="3130" font-size="10" fill="#666">F#5 (740.0 Hz)</text>
+<text x="32" y="3146" font-size="10" fill="#666">L = 13.560"</text>
+<rect x="200" y="3108" width="344.7707047843478" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="552.7707047843478" y="3118" font-size="9" fill="#444">13.56"</text>
+<text x="32" y="3210" font-size="13" font-weight="bold">MAR-G5</text>
+<text x="32" y="3230" font-size="10" fill="#666">G5 (784.0 Hz)</text>
+<text x="32" y="3246" font-size="10" fill="#666">L = 13.174"</text>
+<rect x="200" y="3208" width="334.9564354593656" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="542.9564354593656" y="3218" font-size="9" fill="#444">13.17"</text>
+<text x="32" y="3310" font-size="13" font-weight="bold">MAR-Gsharp5</text>
+<text x="32" y="3330" font-size="10" fill="#666">G#5 (830.6 Hz)</text>
+<text x="32" y="3346" font-size="10" fill="#666">L = 12.799"</text>
+<rect x="200" y="3308" width="325.42184738457723" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="533.4218473845772" y="3318" font-size="9" fill="#444">12.80"</text>
+<text x="32" y="3410" font-size="13" font-weight="bold">MAR-A5</text>
+<text x="32" y="3430" font-size="10" fill="#666">A5 (880.0 Hz)</text>
+<text x="32" y="3446" font-size="10" fill="#666">L = 12.435"</text>
+<rect x="200" y="3408" width="316.16694055998266" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="524.1669405599827" y="3418" font-size="9" fill="#444">12.44"</text>
+<text x="32" y="3510" font-size="13" font-weight="bold">MAR-Asharp5</text>
+<text x="32" y="3530" font-size="10" fill="#666">A#5 (932.3 Hz)</text>
+<text x="32" y="3546" font-size="10" fill="#666">L = 12.081"</text>
+<rect x="200" y="3508" width="307.1662894173824" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="515.1662894173824" y="3518" font-size="9" fill="#444">12.08"</text>
+<text x="32" y="3610" font-size="13" font-weight="bold">MAR-B5</text>
+<text x="32" y="3630" font-size="10" fill="#666">B5 (987.8 Hz)</text>
+<text x="32" y="3646" font-size="10" fill="#666">L = 11.737"</text>
+<rect x="200" y="3608" width="298.41989395677655" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="506.41989395677655" y="3618" font-size="9" fill="#444">11.74"</text>
+<text x="32" y="3710" font-size="13" font-weight="bold">MAR-C6</text>
+<text x="32" y="3730" font-size="10" fill="#666">C6 (1046.5 Hz)</text>
+<text x="32" y="3746" font-size="10" fill="#666">L = 11.403"</text>
+<rect x="200" y="3708" width="289.92775417816506" height="18" fill="#fafafa" stroke="black" stroke-width="1.2"/>
+<text x="497.92775417816506" y="3718" font-size="9" fill="#444">11.40"</text>
+<text x="32" y="3860" font-size="9" fill="#666">Generated by instrument-maker-v4 generate_drawings.py. Scale: 25.4 px/inch.</text>
+</svg>

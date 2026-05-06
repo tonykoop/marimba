@@ -1,0 +1,40 @@
+{
+  "instrument_id": "TBD",
+  "family": "free-free beam idiophone with tuned quarter-wave resonators",
+  "instrument_type": "Marimba",
+  "variant_size": "Prototype",
+  "key_scale": "C3-C6 chromatic 37-bar workbook-derived build range; full C2-F6 and portable C4-F6 remain documented expansion options",
+  "target_fundamental_hz": "TBD",
+  "primary_material": "African Padauk bars; PVC or aluminum resonator tubes TBD by sourcing",
+  "construction_pipeline": "CNC bar blanks, 3D arch undercuts, node drilling, resonator tube cutting, frame assembly",
+  "design_workbook": "/mnt/c/Users/Tony/Documents/GitHub/marimba/marimba-design-table.xlsx",
+  "design_sheet": "Marimba",
+  "master_workbook": "/mnt/c/Users/Tony/Documents/Claude/Projects/Career/Instrument Workshop Master v3.xlsx",
+  "done_bar_repo": "TBD",
+  "notes": "",
+  "generated_on": "2026-05-06",
+  "workbook_hint": {
+    "sheet": "Marimba",
+    "found": true,
+    "dimension": "A1:X106",
+    "formula_count_first_80_rows": 392,
+    "blue_input_cells_sample": [
+      "P14",
+      "A59",
+      "A64",
+      "A72",
+      "A78",
+      "A84"
+    ],
+    "row_label_sample": [
+      "Marimba \u2014 CNC Bar & Arch Design Table | BUILD SPECIFICATIONS | MATERIAL LIBRARY",
+      "Free-Free Beam Model: f = K \u00d7 t / L\u00b2  \u00b7  \u03bb\u2081 = 4.730  \u00b7  Nodes at 22.4% from each end | Full 4.5-Octave (C2-F6) | Portable 2.5-Octave (C4-F6) | Wood Species",
+      "Range | C2-F6 (54 bars) | C4-F6 (30 bars) | Honduras Rosewood",
+      "Note | MIDI | Freq (Hz) | Bar Length (in)",
+      "C3 | 48 | =440*2^((B5-69)/12) | =SQRT($Q$28*$Q$29/C5)",
+      "C#3 | 49 | =440*2^((B6-69)/12) | =SQRT($Q$28*$Q$29/C6)",
+      "D3 | 50 | =440*2^((B7-69)/12) | =SQRT($Q$28*$Q$29/C7)",
+      "D#3 | 51 | =440*2^((B8-69)/12) | =SQRT($Q$28*$Q$29/C8)"
+    ]
+  }
+}

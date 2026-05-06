@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="980" height="560" fill="white" stroke="black"/>
+  <text x="32" y="40" font-size="20" font-weight="bold">Marimba Bar Arch Undercut Section</text>
+  <text x="32" y="62" font-size="12" fill="#444">C3 pilot shown: L 32.251 in, width 2.000 in, edge 0.875 in, center 0.250 in, arch depth 0.625 in</text>
+
+  <line x1="92" y1="155" x2="822" y2="155" stroke="#777" stroke-dasharray="8 4"/>
+  <text x="92" y="142" font-size="11" fill="#555">top face datum A</text>
+
+  <path d="M 110 160 L 810 160 L 810 235 Q 460 415 110 235 Z" fill="#f7ead7" stroke="black" stroke-width="2"/>
+  <path d="M 250 235 Q 460 376 670 235" fill="none" stroke="#8a4b1d" stroke-width="4"/>
+  <text x="375" y="395" font-size="12" fill="#444">centered parabolic underside relief</text>
+
+  <line x1="250" y1="265" x2="670" y2="265" stroke="#333" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="460" y="258" text-anchor="middle" font-size="12">arch length approx. 60% of bar length</text>
+
+  <line x1="845" y1="160" x2="845" y2="235" stroke="black"/>
+  <line x1="830" y1="160" x2="860" y2="160" stroke="black"/>
+  <line x1="830" y1="235" x2="860" y2="235" stroke="black"/>
+  <text x="865" y="202" font-size="12">edge thickness 0.875 in</text>
+
+  <line x1="460" y1="160" x2="460" y2="376" stroke="#555" stroke-dasharray="4 3"/>
+  <line x1="488" y1="160" x2="488" y2="376" stroke="black"/>
+  <line x1="473" y1="160" x2="503" y2="160" stroke="black"/>
+  <line x1="473" y1="376" x2="503" y2="376" stroke="black"/>
+  <text x="506" y="274" font-size="12">arch depth 0.625 in</text>
+  <text x="506" y="292" font-size="12">center thickness 0.250 in minimum</text>
+
+  <circle cx="250" cy="196" r="9" fill="white" stroke="black"/>
+  <circle cx="670" cy="196" r="9" fill="white" stroke="black"/>
+  <text x="250" y="200" font-size="9" text-anchor="middle">N1</text>
+  <text x="670" y="200" font-size="9" text-anchor="middle">N2</text>
+  <text x="190" y="128" font-size="12">node holes at 0.224L and 0.776L</text>
+
+  <rect x="32" y="450" width="916" height="74" fill="#fafafa" stroke="#333"/>
+  <text x="48" y="475" font-size="12" font-weight="bold">CNC notes</text>
+  <text x="48" y="496" font-size="11">Use 3/4 in ball-end for bass/mid arch surfacing unless CAM proves a smaller tool is cleaner.</text>
+  <text x="48" y="514" font-size="11">Set Z from top face datum A; verify final center thickness before sanding. This is a pre-CAM drawing, not verified G-code.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

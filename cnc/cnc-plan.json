@@ -1,0 +1,191 @@
+{
+  "schema": "instrument-maker-v4.2-cnc-plan",
+  "generated_on": "2026-05-06",
+  "packet": "/mnt/c/Users/Tony/Documents/GitHub/marimba",
+  "family": "beam-idiophone",
+  "machine_note": "Maker Nexus/home shop; verify exact machine, spindle, collet, bed size, and hold-down before CAM.",
+  "available_inputs": {
+    "design.md": true,
+    "family-spec.csv": true,
+    "bom.csv": true,
+    "cut-list.csv": true,
+    "sourcing.csv": true,
+    "drawing-brief.md": true,
+    "assembly-manual.md": true,
+    "validation.csv": true,
+    "drawings/arch-undercut-section.svg": true,
+    "drawings/resonator-layout.svg": true,
+    "drawings/frame-overview.svg": true
+  },
+  "assumptions": [
+    "This is a pre-CAM operation graph, not verified G-code.",
+    "The active build range is C3-C6, 37 bars.",
+    "Source dimensions come from family-spec.csv and marimba-design-table.xlsx.",
+    "The CNC plan assumes African Padauk blanks surfaced to 0.875 in.",
+    "Resonator tube bore is still a sourcing variable; update tube lengths after selecting actual ID."
+  ],
+  "pilot_gate": {
+    "pilot_notes": ["C3", "A4", "C6"],
+    "release_criteria": [
+      "C3 center thickness remains at least 0.250 in.",
+      "A4 tunes within normal sanding allowance.",
+      "C6 shallow arch does not become overly stiff or dead.",
+      "Resonator prototypes reinforce without buzz.",
+      "The measured K trend is consistent enough to continue."
+    ]
+  },
+  "operations": [
+    {
+      "op_id": "OP-010",
+      "name": "Review design package and pilot gate",
+      "machine": "Bench",
+      "tool": "README.md, design.md, calipers, tuner",
+      "workholding": "Flat bench, drawing packet",
+      "datum": "Top face A, left end B, bar centerline C",
+      "inputs": ["design.md", "family-spec.csv", "drawings/arch-undercut-section.svg", "validation.csv"],
+      "outputs": ["pilot-build checklist"],
+      "checks": ["C3/A4/C6 pilot bars identified", "Actual wood species and tube bore confirmed", "Full-set cutting is held until pilot data is reviewed"],
+      "notes": "Do not cut full set until pilot bars validate K constant and arch schedule."
+    },
+    {
+      "op_id": "OP-110",
+      "name": "Surface and thickness bar blanks",
+      "machine": "Jointer / planer / drum sander",
+      "tool": "Jointer knives, planer, drum sander, calipers",
+      "workholding": "Flat carrier board, push blocks",
+      "datum": "Top face A and grain arrow",
+      "inputs": ["cut-list.csv", "family-spec.csv"],
+      "outputs": ["37 surfaced oversize blanks"],
+      "checks": ["Thickness 0.875 in +/- 0.005", "Grain direction logged", "Defects outside finished bar area"],
+      "notes": "Leave length and width allowance for tabs and final tuning cleanup."
+    },
+    {
+      "op_id": "OP-120",
+      "name": "Label blanks and mark nodes",
+      "machine": "Bench",
+      "tool": "Marking knife, square, center punch, calipers",
+      "workholding": "Flat bench with stop block",
+      "datum": "Left end B and centerline C",
+      "inputs": ["family-spec.csv", "drawings/*-body.svg"],
+      "outputs": ["Labeled blanks with note, target Hz, nodes"],
+      "checks": ["node_1 and node_2 match family-spec.csv", "Top face remains marked through the flip operation"],
+      "notes": "Cord/support holes belong at free-free nodes."
+    },
+    {
+      "op_id": "OP-210",
+      "name": "Prepare CNC fixture and datum verification",
+      "machine": "CNC router",
+      "tool": "Spoilboard surfacing bit, edge finder/probe, clamps/tape",
+      "workholding": "Replaceable spoilboard, datum fence, optional vacuum plus clamps",
+      "datum": "Machine X0 at left end B, Y0 at centerline C, Z0 top face A",
+      "inputs": ["cnc/setup-sheet.md", "drawings/arch-undercut-section.svg"],
+      "outputs": ["Verified fixture", "air-cut report"],
+      "checks": ["Spoilboard surfaced", "Clamps clear toolpath", "Sample air-cut passes"],
+      "notes": "This operation creates confidence before Padauk is loaded."
+    },
+    {
+      "op_id": "OP-220",
+      "name": "Rough profile bars with tabs",
+      "machine": "CNC router",
+      "tool": "1/4 in downcut spiral; optional 1/8 in upcut for small reliefs",
+      "workholding": "Spoilboard tape/clamps, tabs at non-vibrating ends",
+      "datum": "Top face A, left end B, centerline C",
+      "inputs": ["family-spec.csv", "cad/design-table-inputs.csv"],
+      "outputs": ["Profiled bar blanks with tabs"],
+      "checks": ["Tabs do not overlap node holes or arch region", "Final length retains tuning allowance", "Note label survives operation"],
+      "notes": "Use conservative depth per pass and preserve labeled orientation."
+    },
+    {
+      "op_id": "OP-230",
+      "name": "3D arch underside relief",
+      "machine": "CNC router",
+      "tool": "3/4 in ball-end mill; 1/2 in ball-end for treble alternative",
+      "workholding": "Cradle or flip fixture supporting top face without denting",
+      "datum": "Top face A re-referenced after flip; left end B retained",
+      "inputs": ["family-spec.csv", "drawings/arch-undercut-section.svg"],
+      "outputs": ["Underside arch cut on each bar"],
+      "checks": ["Center thickness never below 0.250 in", "Arch centered", "No chatter/burn", "Toolpath simulation or air-cut completed"],
+      "notes": "Use parabolic toolpath over about 60 percent of bar length. This is the pitch-lowering operation."
+    },
+    {
+      "op_id": "OP-240",
+      "name": "Drill support holes at nodes",
+      "machine": "Drill press or CNC router",
+      "tool": "1/4 in brad-point bit or boring tool",
+      "workholding": "Backer board, V/support fixture",
+      "datum": "Left end B, centerline C",
+      "inputs": ["family-spec.csv", "generated bar drawings"],
+      "outputs": ["Clean node/support holes"],
+      "checks": ["Hole breakout absent", "Node positions within +/- 0.020 in", "Holes deburred"],
+      "notes": "Pilot on scrap before drilling tuned bars."
+    },
+    {
+      "op_id": "OP-310",
+      "name": "Hand tune bars",
+      "machine": "Bench",
+      "tool": "Soft node supports, tuner, sanding block, scraper, scale",
+      "workholding": "Padded bench, supports at node_1 and node_2",
+      "datum": "Acoustic node support datum",
+      "inputs": ["validation.csv", "family-spec.csv"],
+      "outputs": ["Measured pitch log", "tuned bars"],
+      "checks": ["Measured Hz recorded at flat/post-arch/post-sand/final stages", "Cents error computed", "Material removal region documented"],
+      "notes": "Remove underside center material to lower pitch. Sneak up slowly."
+    },
+    {
+      "op_id": "OP-410",
+      "name": "Cut and deburr resonator tubes",
+      "machine": "Chop saw / band saw / tube cutter",
+      "tool": "Tube cutter, deburring tool, calipers",
+      "workholding": "Tube V-block, stop block",
+      "datum": "Tube open end",
+      "inputs": ["family-spec.csv", "sourcing.csv", "drawings/resonator-layout.svg"],
+      "outputs": ["Oversize resonator tubes labeled by note"],
+      "checks": ["Tube ID matches updated bore", "Cut length includes trim allowance", "Burrs removed"],
+      "notes": "Recalculate lengths if selected bore differs from current proxy."
+    },
+    {
+      "op_id": "OP-420",
+      "name": "Cap and mount resonators",
+      "machine": "Bench / drill press",
+      "tool": "Drill bits, caps/stoppers, seal material",
+      "workholding": "Tube holding jig, frame mockup",
+      "datum": "Tube open end and bar centerline",
+      "inputs": ["assembly-manual.md", "drawings/frame-overview.svg"],
+      "outputs": ["Mounted adjustable resonators"],
+      "checks": ["Caps seal without buzz", "Tubes clear bars/rails", "Note labels visible"],
+      "notes": "Use removable caps for first validation build."
+    },
+    {
+      "op_id": "OP-510",
+      "name": "Build frame and support rails",
+      "machine": "Table saw / CNC / drill press",
+      "tool": "Saw blade, drill bits, router bits",
+      "workholding": "Rail fixture, cross-member clamps",
+      "datum": "Player-side datum, rail centerlines",
+      "inputs": ["drawings/frame-overview.svg", "cad/SolidWorks-MasterLayout-Plan.md"],
+      "outputs": ["Temporary or final support frame"],
+      "checks": ["Supports land at nodes", "Cross members removable", "Mallet and resonator clearance checked"],
+      "notes": "Temporary validation frame is acceptable before final furniture-grade frame."
+    },
+    {
+      "op_id": "OP-900",
+      "name": "Final validation and release",
+      "machine": "Bench",
+      "tool": "Chromatic tuner, microphone, calipers, camera",
+      "workholding": "Assembled frame on stable stand",
+      "datum": "Same support and strike datum used for every note",
+      "inputs": ["validation.csv", "photo-shotlist.md"],
+      "outputs": ["Updated validation.csv", "process photos"],
+      "checks": ["All notes measured", "Outliers flagged", "Resonator response notes captured"],
+      "notes": "Do not treat dimensions as final until measured data closes the loop."
+    }
+  ],
+  "release_checks": [
+    "Every operation has a datum and workholding method.",
+    "Every tool has a real machine available or an escalation note.",
+    "All tuning-critical features include trim allowance.",
+    "C3/A4/C6 pilot data is reviewed before cutting all 37 bars.",
+    "Actual resonator bore is selected before final tube lengths are frozen.",
+    "validation.csv receives measured data after the first prototype."
+  ]
+}

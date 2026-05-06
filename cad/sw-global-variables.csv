@@ -1,0 +1,26 @@
+global_name,unit,default_value,source,description
+bar_note,text,C3,family-spec.csv,Human-readable note name for the active configuration.
+midi,unitless,48,family-spec.csv,MIDI note number.
+target_frequency_hz,hz,130.813,family-spec.csv,Equal-temperament target frequency with A4 = 440 Hz.
+bar_length_in,in,32.251,family-spec.csv,Finished bar length before final tuning adjustment.
+bar_width_in,in,2.000,family-spec.csv,Finished bar width and current resonator bore proxy.
+edge_thickness_in,in,0.875,workbook,Nominal bar thickness at the ends/edges.
+center_thickness_in,in,0.250,family-spec.csv,Minimum thickness at center of underside arch.
+arch_depth_in,in,0.625,family-spec.csv,Maximum underside relief depth from edge thickness.
+arch_length_ratio,unitless,0.600,workbook notes,Underside arch spans about 60 percent of bar length.
+node_1_in,in,7.224,family-spec.csv,Left support node measured from left end.
+node_2_in,in,25.027,family-spec.csv,Right support node measured from left end.
+cord_hole_diameter_in,in,0.250,workbook build specs,Initial node/support hole diameter.
+resonator_length_in,in,24.260,family-spec.csv,First-pass quarter-wave tube length.
+resonator_bore_in,in,2.000,family-spec.csv,Current bore/end-correction proxy; update after sourcing.
+resonator_mount_clearance_in,in,0.500,assumption,Minimum clearance from tube to vibrating bar/frame.
+tube_cap_allowance_in,in,0.500,assumption,Extra length/space for adjustable stopper or cap.
+bar_spacing_in,in,0.375,assumption,Initial clear gap between adjacent bars; validate ergonomically.
+natural_row_offset_in,in,0.000,assumption,Player-side natural row datum.
+accidental_row_offset_in,in,2.500,assumption,Back-row offset for accidental bars; validate with mallets.
+frame_rail_width_in,in,1.500,assumption,Starting rail width.
+frame_rail_height_in,in,1.500,assumption,Starting rail height.
+ball_end_bit_diameter_in,in,0.750,workbook CNC notes,Primary ball-end tool for arch surfacing.
+stepover_in,in,0.375,workbook CNC notes,50 percent stepover for 3/4 in ball-end bit.
+stock_allowance_length_in,in,0.750,shop assumption,Rough stock length added before final tune/profile.
+tab_allowance_in,in,0.250,shop assumption,Temporary CNC tab allowance where profile cutting needs retention.

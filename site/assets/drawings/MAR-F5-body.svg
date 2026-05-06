@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="360" fill="white" stroke="black" stroke-width="1"/>
+<rect x="64" y="150.0" width="428" height="60" fill="#fafafa" stroke="black" stroke-width="1.5"/>
+<circle cx="64" cy="230.0" r="9" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="64" y="234.0" font-size="11" text-anchor="middle" font-weight="bold">A</text>
+<circle cx="492" cy="230.0" r="9" fill="white" stroke="black" stroke-width="1.5"/>
+<text x="492" y="234.0" font-size="11" text-anchor="middle" font-weight="bold">B</text>
+<line x1="64" y1="288.0" x2="492" y2="288.0" stroke="black" stroke-width="1"/><line x1="64" y1="270.0" x2="64" y2="284.0" stroke="black" stroke-width="1"/><line x1="492" y1="270.0" x2="492" y2="284.0" stroke="black" stroke-width="1"/><polygon points="64,288.0 69,285.0 69,291.0" fill="black"/><polygon points="492,288.0 487,285.0 487,291.0" fill="black"/><text x="278.0" y="282.0" font-size="11" text-anchor="middle">L 13.957"</text>
+<line x1="26" y1="150.0" x2="26" y2="210.0" stroke="black" stroke-width="1"/><line x1="44" y1="150.0" x2="30" y2="150.0" stroke="black" stroke-width="1"/><line x1="44" y1="210.0" x2="30" y2="210.0" stroke="black" stroke-width="1"/><text x="36" y="184.0" font-size="11">t 0.875"</text>
+<text x="64" y="48" font-size="14" font-weight="bold">Marimba Design Packet — MAR-F5</text>
+<text x="64" y="68" font-size="11" fill="#444">free-free beam, suspended at nodes (0.224 · L)</text>
+<rect x="556" y="24" width="220" height="200" fill="white" stroke="black" stroke-width="1"/>
+<line x1="556" y1="24.0" x2="776" y2="24.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="24.0" x2="633.0" y2="49.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="41.5" font-size="9" fill="#444">INSTRUMENT</text>
+<text x="639.2" y="41.5" font-size="10" fill="black">Marimba Design Packet</text>
+<line x1="556" y1="49.0" x2="776" y2="49.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="49.0" x2="633.0" y2="74.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="66.5" font-size="9" fill="#444">MEMBER</text>
+<text x="639.2" y="66.5" font-size="10" fill="black">MAR-F5</text>
+<line x1="556" y1="74.0" x2="776" y2="74.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="74.0" x2="633.0" y2="99.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="91.5" font-size="9" fill="#444">SCALE</text>
+<text x="639.2" y="91.5" font-size="10" fill="black">1:1 (illustrative)</text>
+<line x1="556" y1="99.0" x2="776" y2="99.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="99.0" x2="633.0" y2="124.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="116.5" font-size="9" fill="#444">UNITS</text>
+<text x="639.2" y="116.5" font-size="10" fill="black">inches</text>
+<line x1="556" y1="124.0" x2="776" y2="124.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="124.0" x2="633.0" y2="149.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="141.5" font-size="9" fill="#444">REV</text>
+<text x="639.2" y="141.5" font-size="10" fill="black">v4</text>
+<line x1="556" y1="149.0" x2="776" y2="149.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="149.0" x2="633.0" y2="174.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="166.5" font-size="9" fill="#444">DATE</text>
+<text x="639.2" y="166.5" font-size="10" fill="black">2026-05-06</text>
+<line x1="556" y1="174.0" x2="776" y2="174.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="174.0" x2="633.0" y2="199.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="191.5" font-size="9" fill="#444">AUTHOR</text>
+<text x="639.2" y="191.5" font-size="10" fill="black">Tony Koop</text>
+<line x1="556" y1="199.0" x2="776" y2="199.0" stroke="black" stroke-width="0.5"/>
+<line x1="633.0" y1="199.0" x2="633.0" y2="224.0" stroke="black" stroke-width="0.5"/>
+<text x="560" y="216.5" font-size="9" fill="#444">SHEET</text>
+<text x="639.2" y="216.5" font-size="10" fill="black">1 / 1</text>
+</svg>

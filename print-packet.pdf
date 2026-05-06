@@ -1,0 +1,1402 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R 27 0 R 29 0 R 31 0 R 33 0 R 35 0 R 37 0 R 39 0 R 41 0 R 43 0 R] /Count 20 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 2457 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 1 of 20) Tj T*
+( ) Tj T*
+( Marimba CNC Bar And Resonator Build Packet Print Packet) Tj T*
+() Tj T*
+(Generated: 2026-05-06) Tj T*
+(Packet folder: /mnt/c/Users/Tony/Documents/GitHub/marimba) Tj T*
+() Tj T*
+( File Map) Tj T*
+() Tj T*
+(| File | Purpose |) Tj T*
+(| --- | --- |) Tj T*
+(| design.md | Project intent, catalog metadata, assumptions, and validation plan. |) Tj T*
+(| bom.csv | Starter bill of materials with part categories, quantities, drawing refs, and) Tj T*
+(notes. |) Tj T*
+(| sourcing.csv | Supplier/search tracker with specs, price/date fields, lead time,) Tj T*
+(substitutes, and risks. |) Tj T*
+(| cut-list.csv | Rough/final stock sizes, material, grain/orientation, operations, yield,) Tj T*
+(and offcuts. |) Tj T*
+(| drawing-brief.md | Manufacturing drawing and technical product sketch brief. |) Tj T*
+(| assembly-manual.md | Shop-facing sequence, tools, fixtures, safety, tuning, finishing, and) Tj T*
+(maintenance notes. |) Tj T*
+(| validation.csv | Target/measured values, tolerance, environment, result, and tuning/build) Tj T*
+(action log. |) Tj T*
+(| supplier-rfq.md | Supplier email/request-for-quote starter. |) Tj T*
+(| visual-bom-brief.md | Art direction for an image-forward visual BOM. |) Tj T*
+(| README.md | Project artifact. |) Tj T*
+(| family-spec.csv | Project artifact. |) Tj T*
+(| photo-shotlist.md | Project artifact. |) Tj T*
+(| risks.md | Project artifact. |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( design.md) Tj T*
+() Tj T*
+(Project intent, catalog metadata, assumptions, and validation plan.) Tj T*
+() Tj T*
+( Marimba Design Packet) Tj T*
+() Tj T*
+( Project Intent) Tj T*
+() Tj T*
+(Build a 37-bar C3-C6 marimba packet from the existing workbook design table. The first build) Tj T*
+(target is a CNC-friendly instrument with African Padauk bars, parabolic underside arch) Tj T*
+(undercuts, drilled node supports, quarter-wave resonators, and a frame layout that can) Tj T*
+(become a SolidWorks master sketch.) Tj T*
+() Tj T*
+(The useful boundary for this packet is "build-ready documentation, not finished CAD." Native) Tj T*
+(SolidWorks files do not exist yet. The CAD folder defines the global-variable and design-) Tj T*
+(table contract Tony can use to build the real model.) Tj T*
+() Tj T*
+( Design Intake) Tj T*
+() Tj T*
+(| Field | Value |) Tj T*
+(| --- | --- |) Tj T*
+(| Instrument | Marimba |) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2226 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 2 of 20) Tj T*
+( ) Tj T*
+(| Instrument family | Free-free beam idiophone with tuned quarter-wave resonators |) Tj T*
+(| Active build range | C3-C6 chromatic, 37 bars |) Tj T*
+(| Source workbook | marimba-design-table.xlsx, sheet Marimba, range A1:X106 |) Tj T*
+(| Primary material | African Padauk bars, workbook K constant 155502 |) Tj T*
+(| Bar thickness | 0.875 in nominal edge thickness |) Tj T*
+(| Minimum center thickness | 0.250 in after arch undercut |) Tj T*
+(| Construction pipeline | CNC surfaced blanks, 3D arch undercut, profile/tabs, node) Tj T*
+(drilling, resonator cutting, frame assembly |) Tj T*
+(| Done-bar reference | tongue-drum README and wooden idiophone validation discipline |) Tj T*
+() Tj T*
+(The guided v4.2 intake artifacts are in data/design-intake.json and data/design-input-) Tj T*
+(row.csv.) Tj T*
+() Tj T*
+( Governing Model) Tj T*
+() Tj T*
+( Bar Pitch) Tj T*
+() Tj T*
+(The marimba bars are treated as free-free beams. The first flexural mode uses:) Tj T*
+() Tj T*
+(    lambda_1 = 4.730) Tj T*
+(    f_1 = \(lambda_1^2 / \(2piL^2\)\)  sqrt\(EI/\(rhoA\)\)) Tj T*
+() Tj T*
+(The workbook uses the practical shop form:) Tj T*
+() Tj T*
+(    f ~= K  t / L^2) Tj T*
+(    L ~= sqrt\(K  t / f\)) Tj T*
+() Tj T*
+(where:) Tj T*
+() Tj T*
+(- f is target frequency in Hz.) Tj T*
+(- K is the material-specific free-free bar constant.) Tj T*
+(- t is nominal bar thickness at the edge.) Tj T*
+(- L is bar length.) Tj T*
+() Tj T*
+(For the active packet:) Tj T*
+() Tj T*
+(    K = 155502) Tj T*
+(    t = 0.875 in) Tj T*
+() Tj T*
+(The workbook material library derives this free-free K from the beam material properties and) Tj T*
+(the lambda_1 = 4.730 mode shape. Do not apply flute-bore K2 corrections here; those belong) Tj T*
+(to Native American style flute bore correction work, not beam idiophones.) Tj T*
+() Tj T*
+( Nodes And Supports) Tj T*
+() Tj T*
+(The suspension node locations are:) Tj T*
+() Tj T*
+(    node_1 = 0.224  L) Tj T*
+(    node_2 = 0.776  L) Tj T*
+() Tj T*
+(Cord holes and rail pins reference these two locations. Holes must be drilled at the nodal) Tj T*
+(line so the support does not damp the main mode.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 2653 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 3 of 20) Tj T*
+( ) Tj T*
+() Tj T*
+( Arch Undercut) Tj T*
+() Tj T*
+(The workbook defines a linear MIDI-scaled arch-depth schedule:) Tj T*
+() Tj T*
+(    arch_depth = \(edge_thickness - min_center_thickness\)  min\(1, \(96 - midi\)/48\)) Tj T*
+(    center_thickness = edge_thickness - arch_depth) Tj T*
+() Tj T*
+(This makes the low bars carry the deepest undercut and the high bars approach a shallow) Tj T*
+(arch. The current minimum center thickness is 0.250 in, so C3 reaches the minimum while C6) Tj T*
+(remains about 0.719 in at center.) Tj T*
+() Tj T*
+(The arch should be cut as a centered parabolic underside relief over roughly 60 percent of) Tj T*
+(the bar length. Final voicing still requires controlled sanding and tuner checks; the) Tj T*
+(workbook is the first-pass schedule.) Tj T*
+() Tj T*
+( Resonators) Tj T*
+() Tj T*
+(The resonator tubes are treated as quarter-wave closed pipes:) Tj T*
+() Tj T*
+(    L_res = 13552 / \(4  f\) - 0.82  bore) Tj T*
+() Tj T*
+(The sheet currently uses the bar-width column as the resonator bore/end-correction proxy.) Tj T*
+(That is acceptable as a first-pass planning value, but the sourcing pass should decide real) Tj T*
+(tube diameters and update family-spec.csv if the selected bore differs from the workbook) Tj T*
+(proxy.) Tj T*
+() Tj T*
+(The distinction is important:) Tj T*
+() Tj T*
+(- Bar pitch is tuned by bar length, thickness, arch geometry, and material.) Tj T*
+(- Resonator length is tuned to reinforce the already-tuned bar frequency.) Tj T*
+(- A resonator mismatch changes sustain/loudness/color; it does not fix a wrong bar pitch.) Tj T*
+() Tj T*
+( Bar Schedule) Tj T*
+() Tj T*
+(The full schedule is in family-spec.csv. Representative rows:) Tj T*
+() Tj T*
+(| Note | MIDI | Target Hz | Length in | Width in | Node 1 in | Node 2 in | Arch in | Center) Tj T*
+(in | Resonator in |) Tj T*
+(| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |) Tj T*
+(| C3 | 48 | 130.813 | 32.251 | 2.000 | 7.224 | 25.027 | 0.625 | 0.250 | 24.260 |) Tj T*
+(| C4 | 60 | 261.626 | 22.805 | 1.750 | 5.108 | 17.697 | 0.469 | 0.406 | 11.515 |) Tj T*
+(| A4 | 69 | 440.000 | 17.585 | 1.750 | 3.939 | 13.646 | 0.352 | 0.523 | 6.265 |) Tj T*
+(| C6 | 84 | 1046.502 | 11.403 | 1.250 | 2.554 | 8.848 | 0.156 | 0.719 | 2.212 |) Tj T*
+() Tj T*
+( Resonator Schedule) Tj T*
+() Tj T*
+(family-spec.csv includes a first-pass tube length for every note. Treat these as cut-long) Tj T*
+(values until a tube material, bore, cap style, and stopper/trim strategy are selected.) Tj T*
+() Tj T*
+(Recommended build behavior:) Tj T*
+() Tj T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Length 2856 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 4 of 20) Tj T*
+( ) Tj T*
+(1. Cut resonators at least 0.5 in long for C5 and above, and at least 1.0 in long below C5.) Tj T*
+(2. Use adjustable caps or removable plugs for the first build.) Tj T*
+(3. Tune resonators after the bars are struck and measured in the frame.) Tj T*
+(4. Record final tube length and cents response in validation.csv.) Tj T*
+() Tj T*
+( Hardware Alignment) Tj T*
+() Tj T*
+(The support rails follow the node path rather than a fixed straight rail. For each bar:) Tj T*
+() Tj T*
+(- Left support: node_1_in.) Tj T*
+(- Right support: node_2_in.) Tj T*
+(- Cord/support hole diameter: 0.250 in starting point.) Tj T*
+(- Frame pin/rubber support must touch at the node, not at the bar end.) Tj T*
+(- Bar spacing and frame taper are TBD until mallet clearance and resonator tube diameters) Tj T*
+(are chosen.) Tj T*
+() Tj T*
+( SolidWorks MasterLayout Plan) Tj T*
+() Tj T*
+(The SolidWorks model should be driven from a master sketch and equations:) Tj T*
+() Tj T*
+(1. A Master_Bar part with configurations from cad/design-table-inputs.csv.) Tj T*
+(2. A Master_Resonator part with tube length, bore, cap allowance, and mounting hole) Tj T*
+(variables.) Tj T*
+(3. A Frame_MasterLayout sketch defining bass and treble rail curves, bar spacing, resonator) Tj T*
+(centerlines, and player-side datum.) Tj T*
+() Tj T*
+(Do not model hand-edited dimensions in SolidWorks. Every repeated note configuration should) Tj T*
+(be driven by the variables listed in cad/sw-global-variables.csv.) Tj T*
+() Tj T*
+( Open Assumptions) Tj T*
+() Tj T*
+(- Active packet uses C3-C6 instead of the workbook's full C2-F6 or portable C4-F6 variants.) Tj T*
+(- African Padauk is the workbook-selected material; actual board availability and moisture) Tj T*
+(content are not verified.) Tj T*
+(- Resonator tube material and exact bore are TBD; current resonator lengths use the workbook) Tj T*
+(width/end-correction proxy.) Tj T*
+(- Frame geometry, rail spacing, bar spacing, and transport strategy need CAD and ergonomic) Tj T*
+(review.) Tj T*
+(- CNC feeds/speeds are starting notes only; final CAM must use the actual bit, router, hold-) Tj T*
+(down, stock, and simulation.) Tj T*
+(- No measured bar data exists yet, so all frequencies are target predictions.) Tj T*
+() Tj T*
+( Validation Plan) Tj T*
+() Tj T*
+(1. Surface three sacrificial bars first: C3, A4, and C6. These bound the length, arch, and) Tj T*
+(treble-end assumptions.) Tj T*
+(2. Measure blank thickness, length, density estimate, and moisture content before cutting) Tj T*
+(the arch.) Tj T*
+(3. Record flat-bar pitch, post-arch pitch, post-sanding pitch, and final assembled pitch.) Tj T*
+(4. Update validation.csv with measured Hz and cents error:) Tj T*
+() Tj T*
+(    cents = 1200  log2\(measured_hz / target_hz\)) Tj T*
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 10 0 R >>
+endobj
+12 0 obj
+<< /Length 3701 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 5 of 20) Tj T*
+( ) Tj T*
+() Tj T*
+(5. If the C3/A4/C6 pilot set misses by more than +/- 15 cents before final sanding, update) Tj T*
+(the K constant or arch schedule before cutting the remaining 34 bars.) Tj T*
+(6. Tune resonators only after bars are within the target tuning window.) Tj T*
+() Tj T*
+( Provenance) Tj T*
+() Tj T*
+(- Source workbook: marimba-design-table.xlsx, generated before this v4.2 packet run.) Tj T*
+(- Skill workflow: instrument-maker-v4 v4.2.) Tj T*
+(- Reference family: cantilever-idiophone in repo-relationships.yaml; marimba notes call out) Tj T*
+(bar tuning plus resonator coupling.) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( bom.csv) Tj T*
+() Tj T*
+(Starter bill of materials with part categories, quantities, drawing refs, and notes.) Tj T*
+() Tj T*
+(| item | subassembly | part_name | qty | unit | material_or_spec | make_buy | status | notes) Tj T*
+(|  |  |  |) Tj T*
+(| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |) Tj T*
+(| 1 | Bar set | C3-C6 tuned bars | 37 | ea | African Padauk 7/8 in nominal edge thickness |) Tj T*
+(make | workbook-derived | Individual dimensions in family-spec.csv. |  |  |  |) Tj T*
+(| 2 | Resonators | C3-C6 resonator tubes | 37 | ea | PVC or aluminum tube; bore TBD by) Tj T*
+(sourcing | buy | TBD | Lengths in family-spec.csv are first-pass quarter-wave values using) Tj T*
+(workbook bore proxy. |  |  |  |) Tj T*
+(| 3 | Resonators | Tube caps or adjustable stoppers | 37 | ea | Matched to selected tube) Tj T*
+(bore | buy | TBD | Use adjustable closure for first validation build. |  |  |  |) Tj T*
+(| 4 | Frame | Bass-side rail | 1 | ea | Hard maple or laminated hardwood | make | TBD |) Tj T*
+(Final length and curve depend on CAD frame layout. |  |  |  |) Tj T*
+(| 5 | Frame | Treble-side rail | 1 | ea | Hard maple or laminated hardwood | make | TBD |) Tj T*
+(Must follow support nodes or carry adjustable posts. |  |  |  |) Tj T*
+(| 6 | Frame | Cross members | 4 | ea | Hardwood or plywood fixture stock | make | TBD |) Tj T*
+(Temporary shop frame acceptable for validation build. |  |  |  |) Tj T*
+(| 7 | Hardware | Support cord | 1 | roll | Low-stretch braided cord or synthetic marimba) Tj T*
+(cord | buy | TBD | Size to match 1/4 in node holes and rubber isolators. |  |  |  |) Tj T*
+(| 8 | Hardware | Rubber support tubing or grommets | 74 | ea | Rubber or silicone isolation) Tj T*
+(supports | buy | TBD | Two supports per bar minimum. |  |  |  |) Tj T*
+(| 9 | Hardware | Frame fasteners | 1 | set | Wood screws |  threaded inserts |  washers |) Tj T*
+(buy | TBD | Prefer removable fasteners for tuning access. |  |) Tj T*
+(| 10 | CNC tooling | 3/4 in ball-end mill | 1 | ea | Hardwood-capable ball-end cutter | buy) Tj T*
+(| TBD | Primary arch undercut tool for bass/mid bars. |  |  |  |) Tj T*
+(| 11 | CNC tooling | 1/2 in ball-end mill | 1 | ea | Hardwood-capable ball-end cutter | buy) Tj T*
+(| TBD | Alternative or treble arch finish tool. |  |  |  |) Tj T*
+(| 12 | CNC tooling | 1/4 in downcut spiral | 1 | ea | Hardwood-capable router bit | buy |) Tj T*
+(TBD | Bar profile cleanup and fixture pockets. |  |  |  |) Tj T*
+(| 13 | CNC tooling | 1/8 in upcut spiral | 1 | ea | Hardwood-capable router bit | buy | TBD) Tj T*
+(| Small reliefs |  pilot features |  or templates. |  |) Tj T*
+(| 14 | Finish | Sanding and finish consumables | 1 | set | 80-320 grit abrasives plus) Tj T*
+(oil/shellac/lacquer TBD | buy | TBD | Finish must not load bar underside or node areas. |  |) Tj T*
+(|  |) Tj T*
+(| 15 | Measurement | Tuning and data capture | 1 | set | Chromatic tuner |  microphone |) Tj T*
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 12 0 R >>
+endobj
+14 0 obj
+<< /Length 3760 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 6 of 20) Tj T*
+( ) Tj T*
+(calipers |  scale | buy/owned | TBD | Needed for validation.csv completion. |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( sourcing.csv) Tj T*
+() Tj T*
+(Supplier/search tracker with specs, price/date fields, lead time, substitutes, and risks.) Tj T*
+() Tj T*
+(| item | stable_spec | supplier_candidates | current_price_status | lead_time_status |) Tj T*
+(verification_needed | notes |  |  |  |) Tj T*
+(| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |) Tj T*
+(| African Padauk lumber | Clear straight-grain stock at least 34 in long and 7/8 in final) Tj T*
+(thickness; quartersawn preferred | Local hardwood dealer; Woodcraft; Rockler; specialty) Tj T*
+(tonewood supplier | not verified | not verified | Verify board width/defect-free yield) Tj T*
+(before purchase | Buy enough extra for C3/A4/C6 pilot bars and tuning failures. |  |  |  |) Tj T*
+(| Alternative bar lumber | Hard maple or cherry at 7/8 in final thickness | Local hardwood) Tj T*
+(dealer; Woodcraft; Rockler | not verified | not verified | Verify K constant before) Tj T*
+(substituting | Use only for material study or education build |  not direct swap without) Tj T*
+(validation. |  |  |) Tj T*
+(| Resonator tube stock | PVC or aluminum tubes in selected bores from about 1.25-2.00 in or) Tj T*
+(revised bore set | McMaster-Carr; local plumbing supplier; OnlineMetals | not verified | not) Tj T*
+(verified | Verify ID/OD |  wall thickness |  cap availability |  and cut length | Current) Tj T*
+(workbook lengths use a bore proxy; update after selecting tube sizes. |) Tj T*
+(| Tube caps/stoppers | Adjustable or removable closed end matching tube ID | McMaster-Carr;) Tj T*
+(plumbing supplier; 3D printed plugs | not verified | not verified | Confirm air seal and) Tj T*
+(tuning adjustability | Prototype with removable caps before permanent end caps. |  |  |  |) Tj T*
+(| Frame hardwood | Hard maple or stable hardwood rail stock | Local hardwood dealer | not) Tj T*
+(verified | not verified | Confirm straightness and final rail length | Frame geometry is) Tj T*
+(still CAD-driven TBD. |  |  |  |) Tj T*
+(| Support cord | Low-stretch braided synthetic cord sized for 1/4 in support holes | Music) Tj T*
+(hardware supplier; climbing accessory cord supplier | not verified | not verified | Confirm) Tj T*
+(diameter and stretch | Must not buzz against bar holes. |  |  |  |) Tj T*
+(| Rubber supports | Silicone/rubber tubing or grommets sized to isolate bars | McMaster-) Tj T*
+(Carr; marimba parts supplier | not verified | not verified | Confirm durometer and fit | Two) Tj T*
+(supports per bar minimum. |  |  |  |) Tj T*
+(| CNC ball-end bit | 3/4 in carbide ball-end mill suitable for hardwood | Amana; Whiteside;) Tj T*
+(Onsrud; local tooling supplier | not verified | not verified | Verify shank |  flute length) Tj T*
+(|  machine collet |  and feeds/speeds | Use actual bit geometry in CAM. |) Tj T*
+(| CNC downcut bit | 1/4 in carbide downcut spiral for clean top edges | Amana; Whiteside;) Tj T*
+(Onsrud | not verified | not verified | Verify cut length and chip evacuation | Profile) Tj T*
+(passes need tabs or fixture retention. |  |  |  |) Tj T*
+(| Finish | Thin oil/shellac/lacquer finish compatible with tuned bars | Wood finishing) Tj T*
+(supplier | not verified | not verified | Test on offcuts for pitch shift | Heavy finishes) Tj T*
+(can detune/damp bars. |  |  |  |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( cut-list.csv) Tj T*
+() Tj T*
+(Rough/final stock sizes, material, grain/orientation, operations, yield, and offcuts.) Tj T*
+() Tj T*
+(| cut_id | subassembly | qty | material | rough_dimension_in |) Tj T*
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 14 0 R >>
+endobj
+16 0 obj
+<< /Length 3578 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 7 of 20) Tj T*
+( ) Tj T*
+(finished_dimension_or_reference | operation | notes |  |) Tj T*
+(| --- | --- | --- | --- | --- | --- | --- | --- | --- |) Tj T*
+(| CUT-BAR-BASS | Bars C3-B3 | 12 | African Padauk | 34.0 x 2.25 x 1.00 each max rough blank) Tj T*
+(| See MAR-C3 through MAR-B3 in family-spec.csv | Surface/thickness/profile/arch/drill | Long) Tj T*
+(bars are the stock-yield driver; cut long and tune down. |  |) Tj T*
+(| CUT-BAR-MID | Bars C4-B4 | 12 | African Padauk | 24.0 x 2.00 x 1.00 each max rough blank |) Tj T*
+(See MAR-C4 through MAR-B4 in family-spec.csv | Surface/thickness/profile/arch/drill | Keep) Tj T*
+(grain direction consistent across the octave. |  |) Tj T*
+(| CUT-BAR-TREBLE | Bars C5-B5 | 12 | African Padauk | 17.0 x 1.75 x 1.00 each max rough) Tj T*
+(blank | See MAR-C5 through MAR-B5 in family-spec.csv | Surface/thickness/profile/arch/drill) Tj T*
+(| Smaller arch depths need careful Z-zero discipline. |  |) Tj T*
+(| CUT-BAR-TOP | Bars C6 | 1 | African Padauk | 12.5 x 1.50 x 1.00 rough blank | See MAR-C6) Tj T*
+(in family-spec.csv | Surface/thickness/profile/arch/drill | High bar is short and sensitive) Tj T*
+(to over-sanding. |  |) Tj T*
+(| CUT-RES-BASS | Resonators C3-B3 | 12 | PVC or aluminum tube | Cut 1.0 in oversize from) Tj T*
+(family-spec.csv lengths | Final trim after bar tuning | Tube cut/deburr/cap/drill | Use) Tj T*
+(selected tube bore |  not blindly the workbook bore proxy. |) Tj T*
+(| CUT-RES-MID | Resonators C4-B4 | 12 | PVC or aluminum tube | Cut 0.75 in oversize from) Tj T*
+(family-spec.csv lengths | Final trim after bar tuning | Tube cut/deburr/cap/drill | Mark) Tj T*
+(each tube with note and target Hz. |  |) Tj T*
+(| CUT-RES-TREBLE | Resonators C5-C6 | 13 | PVC or aluminum tube | Cut 0.5 in oversize from) Tj T*
+(family-spec.csv lengths | Final trim after bar tuning | Tube cut/deburr/cap/drill | Very) Tj T*
+(short tubes may need larger bore or box coupling review. |  |) Tj T*
+(| CUT-RAIL-BASS | Frame bass rail | 1 | Hard maple or laminated hardwood | TBD | Node-) Tj T*
+(following rail curve from CAD | Rip/plane/CNC drill | Do not freeze until bar spacing and) Tj T*
+(tube diameters are selected. |  |) Tj T*
+(| CUT-RAIL-TREBLE | Frame treble rail | 1 | Hard maple or laminated hardwood | TBD | Node-) Tj T*
+(following rail curve from CAD | Rip/plane/CNC drill | Keep removable for tuning access. |  |) Tj T*
+(| CUT-CROSS | Frame cross members | 4 | Hardwood or plywood | TBD | Width set by resonator) Tj T*
+(clearance | Cut/drill/assemble | Prototype frame can be sacrificial. |  |) Tj T*
+(| CUT-JIG | Bar underside arch fixture | 1 | MDF or plywood spoilboard | CNC bed sized |) Tj T*
+(Datum fence and tabs per cnc/setup-sheet.md | CNC fixture | Use repeatable X datum and) Tj T*
+(replaceable spoilboard. |  |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( drawing-brief.md) Tj T*
+() Tj T*
+(Manufacturing drawing and technical product sketch brief.) Tj T*
+() Tj T*
+( Drawing Brief) Tj T*
+() Tj T*
+( Drawing Set) Tj T*
+() Tj T*
+(The current packet requires four build-critical drawing classes:) Tj T*
+() Tj T*
+(1. Per-bar SVGs generated from family-spec.csv.) Tj T*
+(2. arch-undercut-section.svg showing underside relief, edge thickness, center thickness, and) Tj T*
+(tool assumptions.) Tj T*
+(3. resonator-layout.svg showing first-pass tube lengths and note mapping.) Tj T*
+(4. frame-overview.svg showing the frame datum plan, rail concept, bar order, and resonator) Tj T*
+(clearance assumptions.) Tj T*
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 16 0 R >>
+endobj
+18 0 obj
+<< /Length 2351 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 8 of 20) Tj T*
+( ) Tj T*
+() Tj T*
+( Drawing Standards) Tj T*
+() Tj T*
+(- Units: inches.) Tj T*
+(- Primary datum for each bar: left end and centerline.) Tj T*
+(- Support holes: show 0.224  L and 0.776  L.) Tj T*
+(- Bar dimensions: length, width, edge thickness, center thickness, arch depth.) Tj T*
+(- Resonator dimensions: tube bore, acoustic length, trim allowance, cap style.) Tj T*
+(- Tolerances:) Tj T*
+(  - Bar length rough cut: +0.125 in / -0.000 in before tuning.) Tj T*
+(  - Final length: tune-to-pitch, not dimension-only.) Tj T*
+(  - Thickness before arch: +/- 0.005 in.) Tj T*
+(  - Node hole placement: +/- 0.020 in first-pass, improve after pilot data.) Tj T*
+(- CNC notes: bit diameter, stepover, Z-zero surface, tabs, workholding, and release checks.) Tj T*
+() Tj T*
+( Open Drawing Questions) Tj T*
+() Tj T*
+(- Final resonator tube bore and cap style.) Tj T*
+(- Final frame rail curve and cross-member spacing.) Tj T*
+(- Bar spacing and accidental/natural row layout.) Tj T*
+(- Whether the first build uses a temporary validation frame or final furniture frame.) Tj T*
+() Tj T*
+( Source Files) Tj T*
+() Tj T*
+(- family-spec.csv) Tj T*
+(- design.md) Tj T*
+(- marimba-design-table.xlsx) Tj T*
+(- cad/SolidWorks-MasterLayout-Plan.md) Tj T*
+(- cnc/setup-sheet.md) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( assembly-manual.md) Tj T*
+() Tj T*
+(Shop-facing sequence, tools, fixtures, safety, tuning, finishing, and maintenance notes.) Tj T*
+() Tj T*
+( Marimba Assembly Manual) Tj T*
+() Tj T*
+( Build Philosophy) Tj T*
+() Tj T*
+(Cut three pilot bars before committing the whole set: C3, A4, and C6. They bound the low) Tj T*
+(arch-depth limit, the center of the scale, and the short/high-bar behavior. Use their) Tj T*
+(measured pitch and resonator response to decide whether the workbook K constant, selected) Tj T*
+(wood, and CNC arch path are ready for the full run.) Tj T*
+() Tj T*
+( Preflight) Tj T*
+() Tj T*
+(- [ ] Confirm active range: C3-C6 chromatic, 37 bars.) Tj T*
+(- [ ] Confirm selected bar wood and moisture content.) Tj T*
+(- [ ] Confirm actual resonator tube bore and update family-spec.csv if it differs from the) Tj T*
+(workbook proxy.) Tj T*
+(- [ ] Confirm CNC bed size, hold-down, bit length, and dust collection.) Tj T*
+ET
+endstream
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 18 0 R >>
+endobj
+20 0 obj
+<< /Length 2799 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 9 of 20) Tj T*
+( ) Tj T*
+(- [ ] Print or open drawings/arch-undercut-section.svg, drawings/resonator-layout.svg, and) Tj T*
+(cnc/setup-sheet.md.) Tj T*
+() Tj T*
+( Bar Workflow) Tj T*
+() Tj T*
+(1. Break down rough Padauk stock into oversize blanks using cut-list.csv.) Tj T*
+(2. Joint one face and edge. Mark grain direction and top face.) Tj T*
+(3. Plane or sand each blank to 0.875 in nominal edge thickness.) Tj T*
+(4. Label every blank with member_id, note, target Hz, and top face.) Tj T*
+(5. CNC profile each bar oversize or leave tabs for final cleanup.) Tj T*
+(6. Mark node positions from family-spec.csv.) Tj T*
+(7. Drill support/cord holes at the node line. Start with 0.250 in, then adapt to the actual) Tj T*
+(cord/rubber support system.) Tj T*
+(8. Cut the underside parabolic arch. Use a conservative Z-zero and leave a sanding/tuning) Tj T*
+(allowance.) Tj T*
+(9. Deburr and sand without rounding node contact areas excessively.) Tj T*
+(10. Strike-test on soft supports at the node positions and record measured Hz in) Tj T*
+(validation.csv.) Tj T*
+() Tj T*
+( Tuning Direction) Tj T*
+() Tj T*
+(- To lower pitch: remove material from the center underside arch region.) Tj T*
+(- To raise pitch: shorten the bar or reduce mass near the ends; raising pitch after over-) Tj T*
+(cutting is limited, so sneak up slowly.) Tj T*
+(- Keep both ends visually balanced. Asymmetric mass removal can pull modes sideways or) Tj T*
+(create uneven sustain.) Tj T*
+(- Tune bars before final resonator matching.) Tj T*
+() Tj T*
+( Resonator Workflow) Tj T*
+() Tj T*
+(1. Select tube material and bore.) Tj T*
+(2. Recalculate tube lengths if the selected bore differs from resonator_bore_in.) Tj T*
+(3. Cut tubes oversize per cut-list.csv.) Tj T*
+(4. Deburr both ends.) Tj T*
+(5. Add removable caps or adjustable stoppers.) Tj T*
+(6. Mount under the matching bar with the opening centered below the vibrating region.) Tj T*
+(7. Trim or adjust caps after the bar pitch is stable in the frame.) Tj T*
+(8. Record final resonator length, cap style, and response notes.) Tj T*
+() Tj T*
+( Frame Workflow) Tj T*
+() Tj T*
+(1. Build a temporary straight or lightly tapered validation frame before the final) Tj T*
+(furniture-grade frame.) Tj T*
+(2. Lay out rail supports from the node schedule, not from equal bar-end offsets.) Tj T*
+(3. Keep resonator access open so tubes can be removed and tuned.) Tj T*
+(4. Add cross members only after checking mallet clearance, tube clearance, and player reach.) Tj T*
+(5. Use removable fasteners until tuning and buzz checks are done.) Tj T*
+() Tj T*
+( Final Checks) Tj T*
+() Tj T*
+(- [ ] All bars are labeled and match family-spec.csv.) Tj T*
+(- [ ] Node supports touch at node positions.) Tj T*
+ET
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 20 0 R >>
+endobj
+22 0 obj
+<< /Length 3850 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 10 of 20) Tj T*
+( ) Tj T*
+(- [ ] No bar contacts the frame except through intended rubber/cord supports.) Tj T*
+(- [ ] No resonator tube touches a vibrating bar.) Tj T*
+(- [ ] Every measured pitch has a validation.csv row.) Tj T*
+(- [ ] Any bar outside +/- 10 cents after final tuning is flagged for rework.) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( validation.csv) Tj T*
+() Tj T*
+(Target/measured values, tolerance, environment, result, and tuning/build action log.) Tj T*
+() Tj T*
+(| member_id | target_note | target_hz | predicted_length_in | stage | measured_hz |) Tj T*
+(cents_error | tuner | environment | notes |  |  |  |) Tj T*
+(| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |) Tj T*
+(| MAR-C3 | C3 | 130.813 | 32.251 | prebuild |  |  |  |  | Pilot low bar; record flat blank |) Tj T*
+(post-arch |  post-sand |  final frame. |) Tj T*
+(| MAR-Csharp3 | C3 | 138.591 | 31.333 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-D3 | D3 | 146.832 | 30.441 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Dsharp3 | D3 | 155.563 | 29.575 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-E3 | E3 | 164.814 | 28.733 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-F3 | F3 | 174.614 | 27.915 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Fsharp3 | F3 | 184.997 | 27.120 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-G3 | G3 | 195.998 | 26.348 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Gsharp3 | G3 | 207.652 | 25.598 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-A3 | A3 | 220.000 | 24.869 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Asharp3 | A3 | 233.082 | 24.161 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-B3 | B3 | 246.942 | 23.473 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-C4 | C4 | 261.626 | 22.805 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Csharp4 | C4 | 277.183 | 22.156 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-D4 | D4 | 293.665 | 21.525 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Dsharp4 | D4 | 311.127 | 20.912 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-E4 | E4 | 329.628 | 20.317 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-F4 | F4 | 349.228 | 19.739 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Fsharp4 | F4 | 369.994 | 19.177 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-G4 | G4 | 391.995 | 18.631 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Gsharp4 | G4 | 415.305 | 18.100 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-A4 | A4 | 440.000 | 17.585 | prebuild |  |  |  |  | Pilot reference bar; use to) Tj T*
+(calibrate K and arch schedule. |  |  |  |) Tj T*
+(| MAR-Asharp4 | A4 | 466.164 | 17.085 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-B4 | B4 | 493.883 | 16.598 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-C5 | C5 | 523.251 | 16.126 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Csharp5 | C5 | 554.365 | 15.667 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-D5 | D5 | 587.330 | 15.221 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Dsharp5 | D5 | 622.254 | 14.787 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-E5 | E5 | 659.255 | 14.366 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-F5 | F5 | 698.456 | 13.957 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Fsharp5 | F5 | 739.989 | 13.560 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-G5 | G5 | 783.991 | 13.174 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Gsharp5 | G5 | 830.609 | 12.799 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-A5 | A5 | 880.000 | 12.435 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-Asharp5 | A5 | 932.328 | 12.081 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+(| MAR-B5 | B5 | 987.767 | 11.737 | prebuild |  |  |  |  |  |  |  |  |) Tj T*
+ET
+endstream
+endobj
+23 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 22 0 R >>
+endobj
+24 0 obj
+<< /Length 1985 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 11 of 20) Tj T*
+( ) Tj T*
+(| MAR-C6 | C6 | 1046.502 | 11.403 | prebuild |  |  |  |  | Pilot high bar; validate shallow) Tj T*
+(arch and short resonator behavior. |  |  |  |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( supplier-rfq.md) Tj T*
+() Tj T*
+(Supplier email/request-for-quote starter.) Tj T*
+() Tj T*
+( Supplier RFQ - Marimba C3-C6 Build) Tj T*
+() Tj T*
+( Scope) Tj T*
+() Tj T*
+(Request quotes for one 37-bar C3-C6 marimba prototype build. Prices, stock, and lead times) Tj T*
+(are intentionally not assumed in this repo; verify current facts before purchasing.) Tj T*
+() Tj T*
+( Bar Lumber) Tj T*
+() Tj T*
+(Please quote clear straight-grain African Padauk suitable for tuned percussion bars.) Tj T*
+() Tj T*
+(Required:) Tj T*
+() Tj T*
+(- Final thickness after surfacing: 0.875 in.) Tj T*
+(- Longest finished bar: 32.251 in.) Tj T*
+(- Widest finished bar: 2.000 in.) Tj T*
+(- Preferred rough allowance: at least 34 in x 2.25 in x 1.00 in for the longest bass blanks.) Tj T*
+(- Quantity: enough for 37 bars plus at least 3 pilot/scrap bars.) Tj T*
+(- Grain: straight, stable, no checks through the finished bar area.) Tj T*
+(- Moisture content: provide measured or estimated value.) Tj T*
+() Tj T*
+(Alternates:) Tj T*
+() Tj T*
+(- Hard maple for education/prototype comparison.) Tj T*
+(- Cherry for easier machining comparison.) Tj T*
+() Tj T*
+(Do not substitute material directly into the build schedule without updating the K constant) Tj T*
+(and validating pitch.) Tj T*
+() Tj T*
+( Resonator Tubes) Tj T*
+() Tj T*
+(Please quote PVC or aluminum tube options for 37 quarter-wave resonators.) Tj T*
+() Tj T*
+(Required quote data:) Tj T*
+() Tj T*
+(- Material.) Tj T*
+(- Nominal size.) Tj T*
+(- Actual ID and OD.) Tj T*
+(- Wall thickness.) Tj T*
+(- Available lengths.) Tj T*
+(- Compatible caps, plugs, or stopper hardware.) Tj T*
+(- Cutting service availability.) Tj T*
+() Tj T*
+ET
+endstream
+endobj
+25 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 24 0 R >>
+endobj
+26 0 obj
+<< /Length 1759 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 12 of 20) Tj T*
+( ) Tj T*
+(The first-pass length range in this packet is about 2.2 in to 24.3 in, before oversize) Tj T*
+(tuning allowance. Actual lengths must be recalculated if bore differs from the workbook) Tj T*
+(proxy.) Tj T*
+() Tj T*
+( Hardware) Tj T*
+() Tj T*
+(Please quote:) Tj T*
+() Tj T*
+(- Low-stretch support cord or equivalent.) Tj T*
+(- Rubber or silicone tubing/grommets for support isolation.) Tj T*
+(- Frame fasteners suitable for removable tuning access.) Tj T*
+(- Optional threaded inserts for rail/cross-member joints.) Tj T*
+() Tj T*
+( CNC Tooling) Tj T*
+() Tj T*
+(Please quote:) Tj T*
+() Tj T*
+(- 3/4 in carbide ball-end mill, hardwood capable.) Tj T*
+(- 1/2 in carbide ball-end mill, hardwood capable.) Tj T*
+(- 1/4 in downcut spiral router bit.) Tj T*
+(- 1/8 in upcut spiral router bit.) Tj T*
+() Tj T*
+(Include shank diameter, cut length, recommended feed/speed range, and replacement) Tj T*
+(availability.) Tj T*
+() Tj T*
+( Response Format) Tj T*
+() Tj T*
+(Please return:) Tj T*
+() Tj T*
+(    item) Tj T*
+(    supplier part number) Tj T*
+(    material/spec) Tj T*
+(    actual dimensions) Tj T*
+(    quantity available) Tj T*
+(    unit price) Tj T*
+(    lead time) Tj T*
+(    shipping estimate) Tj T*
+(    notes/substitution risks) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( visual-bom-brief.md) Tj T*
+() Tj T*
+(Art direction for an image-forward visual BOM.) Tj T*
+() Tj T*
+( Visual BOM Brief) Tj T*
+() Tj T*
+( Goal) Tj T*
+() Tj T*
+(Create a visual BOM plate that lets another maker understand the marimba build at a glance:) Tj T*
+(bars, resonators, support hardware, frame rails, tooling, and measurement gear.) Tj T*
+() Tj T*
+ET
+endstream
+endobj
+27 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 26 0 R >>
+endobj
+28 0 obj
+<< /Length 2357 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 13 of 20) Tj T*
+( ) Tj T*
+( Required Views) Tj T*
+() Tj T*
+(1. Hero view of the assembled C3-C6 marimba on a simple shop frame.) Tj T*
+(2. Exploded view showing bars above resonator tubes above frame rails.) Tj T*
+(3. Detail inset for one bar: node holes, underside arch, grain direction.) Tj T*
+(4. Detail inset for one resonator: tube, cap/stopper, mounting clearance.) Tj T*
+(5. Material swatches: Padauk bar wood, tube material, rubber supports, frame wood.) Tj T*
+() Tj T*
+( BOM Rows To Show) Tj T*
+() Tj T*
+(| Item | Visual Needed | Source |) Tj T*
+(| --- | --- | --- |) Tj T*
+(| Tuned Padauk bars | Actual shop photo once cut; concept placeholder acceptable before) Tj T*
+(build | family-spec.csv |) Tj T*
+(| Resonator tubes | Supplier image or shop photo | sourcing.csv |) Tj T*
+(| Support cord | Supplier image or shop photo | bom.csv |) Tj T*
+(| Rubber supports | Supplier image or shop photo | bom.csv |) Tj T*
+(| Frame rails | CAD render or shop photo | cad/ |) Tj T*
+(| CNC bits | Supplier image or shop photo | bom.csv |) Tj T*
+(| Tuning tools | Shop photo | validation.csv workflow |) Tj T*
+() Tj T*
+( Labeling Rules) Tj T*
+() Tj T*
+(- Label generated images as concept placeholders.) Tj T*
+(- Do not use generated images for exact dimensions.) Tj T*
+(- Every dimension callout must match family-spec.csv or be marked TBD.) Tj T*
+(- Keep supplier prices out of the visual until current quotes are verified.) Tj T*
+() Tj T*
+( First Plate Layout) Tj T*
+() Tj T*
+(Top: title, date, range, and material.) Tj T*
+() Tj T*
+(Middle left: exploded assembly with numbered callouts.) Tj T*
+() Tj T*
+(Middle right: BOM table grouped by bars, resonators, frame, hardware, tooling.) Tj T*
+() Tj T*
+(Bottom: assumptions and missing purchase-verification items.) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( README.md) Tj T*
+() Tj T*
+(Project artifact.) Tj T*
+() Tj T*
+( Marimba - CNC Bar And Resonator Build Packet) Tj T*
+() Tj T*
+(> A workbook-derived 37-bar C3-C6 marimba packet for CNC-cut Padauk bars, 3D arch undercuts,) Tj T*
+(tuned quarter-wave resonators, and a SolidWorks-ready master-layout handoff.) Tj T*
+() Tj T*
+( What This Is) Tj T*
+() Tj T*
+(This repository is the Mode A v4.2 build packet for a marimba: tuned wooden free-free bars) Tj T*
+ET
+endstream
+endobj
+29 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 28 0 R >>
+endobj
+30 0 obj
+<< /Length 2572 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 14 of 20) Tj T*
+( ) Tj T*
+(suspended at their nodes, with a matched resonator under each note. It turns the existing) Tj T*
+(marimba-design-table.xlsx scaffold into a shop-facing documentation set:) Tj T*
+() Tj T*
+(1. design.md explains the physics model, build range, assumptions, and validation plan.) Tj T*
+(2. family-spec.csv is the 37-bar C3-C6 schedule extracted from the workbook formulas.) Tj T*
+(3. bom.csv, sourcing.csv, and cut-list.csv separate stable specifications from supplier) Tj T*
+(facts that should be verified before buying.) Tj T*
+(4. drawings/, cad/, cnc/, wolfram/, and site/ carry the technical handoff layers.) Tj T*
+() Tj T*
+(Part of the tonykoop/instrument-maker catalog.) Tj T*
+() Tj T*
+( Physics In One Minute) Tj T*
+() Tj T*
+(A marimba bar is a free-free beam. The first mode uses lambda_1 = 4.730, and the practical) Tj T*
+(workbook model is:) Tj T*
+() Tj T*
+(    f ~= K  t / L^2) Tj T*
+(    L ~= sqrt\(K  t / f\)) Tj T*
+() Tj T*
+(Length is the dominant pitch lever. Bar thickness and the underside arch tune the bar; width) Tj T*
+(mostly affects feel, loudness, stiffness distribution, and available resonator bore. The) Tj T*
+(cord/support points land at about 0.224  L and 0.776  L.) Tj T*
+() Tj T*
+(The resonator tubes are quarter-wave closed pipes:) Tj T*
+() Tj T*
+(    L_res ~= c / \(4  f\) - 0.82  bore) Tj T*
+() Tj T*
+(The resonator reinforces the bar's target frequency. It does not tune the bar itself.) Tj T*
+() Tj T*
+( Build Range) Tj T*
+() Tj T*
+(The active packet is a 37-bar chromatic range from C3 to C6, using the workbook's African) Tj T*
+(Padauk setting:) Tj T*
+() Tj T*
+(| Note | Frequency | Bar length | Width | Arch depth | Resonator |) Tj T*
+(| --- | ---: | ---: | ---: | ---: | ---: |) Tj T*
+(| C3 | 130.813 Hz | 32.251 in | 2.000 in | 0.625 in | 24.260 in |) Tj T*
+(| C4 | 261.626 Hz | 22.805 in | 1.750 in | 0.469 in | 11.515 in |) Tj T*
+(| A4 | 440.000 Hz | 17.585 in | 1.750 in | 0.352 in | 6.265 in |) Tj T*
+(| C6 | 1046.502 Hz | 11.403 in | 1.250 in | 0.156 in | 2.212 in |) Tj T*
+() Tj T*
+(The workbook also documents two expansion shapes: a full C2-F6 marimba and a portable C4-F6) Tj T*
+(instrument. Those are not cut lists yet; they are future configurations once the C3-C6 bar) Tj T*
+(and resonator workflow is validated.) Tj T*
+() Tj T*
+( Repository Structure) Tj T*
+() Tj T*
+(    marimba/) Tj T*
+(    |-- README.md) Tj T*
+(    |-- design.md) Tj T*
+(    |-- marimba-design-table.xlsx) Tj T*
+(    |-- family-spec.csv) Tj T*
+ET
+endstream
+endobj
+31 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 30 0 R >>
+endobj
+32 0 obj
+<< /Length 2368 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 15 of 20) Tj T*
+( ) Tj T*
+(    |-- bom.csv) Tj T*
+(    |-- sourcing.csv) Tj T*
+(    |-- cut-list.csv) Tj T*
+(    |-- validation.csv) Tj T*
+(    |-- assembly-manual.md) Tj T*
+(    |-- supplier-rfq.md) Tj T*
+(    |-- visual-bom-brief.md) Tj T*
+(    |-- drawing-brief.md) Tj T*
+(    |-- risks.md) Tj T*
+(    |-- photo-shotlist.md) Tj T*
+(    |-- cad/) Tj T*
+(    |-- cnc/) Tj T*
+(    |-- data/) Tj T*
+(    |-- drawings/) Tj T*
+(    |-- images/) Tj T*
+(    |-- site/) Tj T*
+(    -- wolfram/) Tj T*
+() Tj T*
+( Status) Tj T*
+() Tj T*
+(| Area | Status |) Tj T*
+(| --- | --- |) Tj T*
+(| Workbook scaffold | done, source table in marimba-design-table.xlsx |) Tj T*
+(| Guided intake | done, see data/design-intake.json |) Tj T*
+(| C3-C6 bar schedule | done, see family-spec.csv |) Tj T*
+(| CNC operation plan | generated, pre-CAM only |) Tj T*
+(| SolidWorks handoff | prepared as CSV/Markdown contract, no native CAD yet |) Tj T*
+(| Wolfram source | prepared as .wl; notebook execution pending local Wolfram |) Tj T*
+(| Build photos | pending first shop build |) Tj T*
+(| Measured tuning data | pending prototype validation |) Tj T*
+() Tj T*
+( License) Tj T*
+() Tj T*
+(CC BY 4.0 - see LICENSE for details.) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( family-spec.csv) Tj T*
+() Tj T*
+(Project artifact.) Tj T*
+() Tj T*
+(| member_id | target_note | midi | target_hz | predicted_length_in | predicted_width_in |) Tj T*
+(predicted_thick_in | node_1_in | node_2_in | arch_depth_in | center_thickness_in |) Tj T*
+(resonator_length_in | resonator_bore_in | material | k_constant | scale_label | notes |) Tj T*
+(| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |) Tj T*
+(--- | --- |) Tj T*
+(| MAR-C3 | C3 | 48 | 130.813 | 32.251 | 2.000 | 0.875 | 7.224 | 25.027 | 0.625 | 0.250 |) Tj T*
+(24.260 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Csharp3 | C3 | 49 | 138.591 | 31.333 | 2.000 | 0.875 | 7.019 | 24.315 | 0.612 | 0.263) Tj T*
+(| 22.806 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+ET
+endstream
+endobj
+33 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 32 0 R >>
+endobj
+34 0 obj
+<< /Length 4893 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 16 of 20) Tj T*
+( ) Tj T*
+(| MAR-D3 | D3 | 50 | 146.832 | 30.441 | 2.000 | 0.875 | 6.819 | 23.622 | 0.599 | 0.276 |) Tj T*
+(21.434 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Dsharp3 | D3 | 51 | 155.563 | 29.575 | 2.000 | 0.875 | 6.625 | 22.950 | 0.586 | 0.289) Tj T*
+(| 20.139 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-E3 | E3 | 52 | 164.814 | 28.733 | 2.000 | 0.875 | 6.436 | 22.297 | 0.573 | 0.302 |) Tj T*
+(18.917 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-F3 | F3 | 53 | 174.614 | 27.915 | 2.000 | 0.875 | 6.253 | 21.662 | 0.560 | 0.315 |) Tj T*
+(17.763 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Fsharp3 | F3 | 54 | 184.997 | 27.120 | 2.000 | 0.875 | 6.075 | 21.045 | 0.547 | 0.328) Tj T*
+(| 16.674 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-G3 | G3 | 55 | 195.998 | 26.348 | 2.000 | 0.875 | 5.902 | 20.446 | 0.534 | 0.341 |) Tj T*
+(15.646 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Gsharp3 | G3 | 56 | 207.652 | 25.598 | 2.000 | 0.875 | 5.734 | 19.864 | 0.521 | 0.354) Tj T*
+(| 14.676 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-A3 | A3 | 57 | 220.000 | 24.869 | 2.000 | 0.875 | 5.571 | 19.298 | 0.508 | 0.367 |) Tj T*
+(13.760 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Asharp3 | A3 | 58 | 233.082 | 24.161 | 2.000 | 0.875 | 5.412 | 18.749 | 0.495 | 0.380) Tj T*
+(| 12.896 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-B3 | B3 | 59 | 246.942 | 23.473 | 2.000 | 0.875 | 5.258 | 18.215 | 0.482 | 0.393 |) Tj T*
+(12.080 | 2.000 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-C4 | C4 | 60 | 261.626 | 22.805 | 1.750 | 0.875 | 5.108 | 17.697 | 0.469 | 0.406 |) Tj T*
+(11.515 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Csharp4 | C4 | 61 | 277.183 | 22.156 | 1.750 | 0.875 | 4.963 | 17.193 | 0.456 | 0.419) Tj T*
+(| 10.788 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-D4 | D4 | 62 | 293.665 | 21.525 | 1.750 | 0.875 | 4.822 | 16.704 | 0.443 | 0.432 |) Tj T*
+(10.102 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Dsharp4 | D4 | 63 | 311.127 | 20.912 | 1.750 | 0.875 | 4.684 | 16.228 | 0.430 | 0.445) Tj T*
+(| 9.454 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-E4 | E4 | 64 | 329.628 | 20.317 | 1.750 | 0.875 | 4.551 | 15.766 | 0.417 | 0.458 |) Tj T*
+(8.843 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-F4 | F4 | 65 | 349.228 | 19.739 | 1.750 | 0.875 | 4.421 | 15.317 | 0.404 | 0.471 |) Tj T*
+(8.266 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Fsharp4 | F4 | 66 | 369.994 | 19.177 | 1.750 | 0.875 | 4.296 | 14.881 | 0.391 | 0.484) Tj T*
+(| 7.722 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-G4 | G4 | 67 | 391.995 | 18.631 | 1.750 | 0.875 | 4.173 | 14.458 | 0.378 | 0.497 |) Tj T*
+ET
+endstream
+endobj
+35 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 34 0 R >>
+endobj
+36 0 obj
+<< /Length 4877 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 17 of 20) Tj T*
+( ) Tj T*
+(7.208 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Gsharp4 | G4 | 68 | 415.305 | 18.100 | 1.750 | 0.875 | 4.054 | 14.046 | 0.365 | 0.510) Tj T*
+(| 6.723 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-A4 | A4 | 69 | 440.000 | 17.585 | 1.750 | 0.875 | 3.939 | 13.646 | 0.352 | 0.523 |) Tj T*
+(6.265 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Asharp4 | A4 | 70 | 466.164 | 17.085 | 1.750 | 0.875 | 3.827 | 13.258 | 0.339 | 0.536) Tj T*
+(| 5.833 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-B4 | B4 | 71 | 493.883 | 16.598 | 1.750 | 0.875 | 3.718 | 12.880 | 0.326 | 0.549 |) Tj T*
+(5.425 | 1.750 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-C5 | C5 | 72 | 523.251 | 16.126 | 1.500 | 0.875 | 3.612 | 12.513 | 0.312 | 0.562 |) Tj T*
+(5.245 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Csharp5 | C5 | 73 | 554.365 | 15.667 | 1.500 | 0.875 | 3.509 | 12.157 | 0.299 | 0.576) Tj T*
+(| 4.881 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-D5 | D5 | 74 | 587.330 | 15.221 | 1.500 | 0.875 | 3.409 | 11.811 | 0.286 | 0.589 |) Tj T*
+(4.538 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Dsharp5 | D5 | 75 | 622.254 | 14.787 | 1.500 | 0.875 | 3.312 | 11.475 | 0.273 | 0.602) Tj T*
+(| 4.215 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-E5 | E5 | 76 | 659.255 | 14.366 | 1.500 | 0.875 | 3.218 | 11.148 | 0.260 | 0.615 |) Tj T*
+(3.909 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-F5 | F5 | 77 | 698.456 | 13.957 | 1.500 | 0.875 | 3.126 | 10.831 | 0.247 | 0.628 |) Tj T*
+(3.621 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Fsharp5 | F5 | 78 | 739.989 | 13.560 | 1.500 | 0.875 | 3.037 | 10.523 | 0.234 | 0.641) Tj T*
+(| 3.348 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-G5 | G5 | 79 | 783.991 | 13.174 | 1.500 | 0.875 | 2.951 | 10.223 | 0.221 | 0.654 |) Tj T*
+(3.091 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Gsharp5 | G5 | 80 | 830.609 | 12.799 | 1.500 | 0.875 | 2.867 | 9.932 | 0.208 | 0.667 |) Tj T*
+(2.849 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-A5 | A5 | 81 | 880.000 | 12.435 | 1.500 | 0.875 | 2.785 | 9.649 | 0.195 | 0.680 |) Tj T*
+(2.620 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-Asharp5 | A5 | 82 | 932.328 | 12.081 | 1.500 | 0.875 | 2.706 | 9.375 | 0.182 | 0.693 |) Tj T*
+(2.404 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-B5 | B5 | 83 | 987.767 | 11.737 | 1.500 | 0.875 | 2.629 | 9.108 | 0.169 | 0.706 |) Tj T*
+(2.200 | 1.500 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+(| MAR-C6 | C6 | 84 | 1046.502 | 11.403 | 1.250 | 0.875 | 2.554 | 8.848 | 0.156 | 0.719 |) Tj T*
+(2.212 | 1.250 | African Padauk | 155502 | C3-C6 chromatic | Workbook-derived from Marimba) Tj T*
+ET
+endstream
+endobj
+37 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 36 0 R >>
+endobj
+38 0 obj
+<< /Length 2575 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 18 of 20) Tj T*
+( ) Tj T*
+(sheet; resonator bore currently follows width/end-correction proxy. |) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( photo-shotlist.md) Tj T*
+() Tj T*
+(Project artifact.) Tj T*
+() Tj T*
+( Photo Shotlist) Tj T*
+() Tj T*
+(This shotlist follows the repo-level photo pipeline expectations from instrument-) Tj T*
+(maker/docs/photo-pipeline.md: capture real process images first, use generated or supplier) Tj T*
+(images only as labeled placeholders, and keep build-log image names stable enough for) Tj T*
+(site/index.html.) Tj T*
+() Tj T*
+( Intake And Materials) Tj T*
+() Tj T*
+(- images/01-workbook-table.png: screenshot of marimba-design-table.xlsx showing the Marimba) Tj T*
+(sheet.) Tj T*
+(- images/02-padauk-stock.jpg: rough Padauk boards with ruler and grain direction.) Tj T*
+(- images/03-resonator-tube-options.jpg: tube material and cap options.) Tj T*
+(- images/04-cnc-tooling.jpg: ball-end mills and profile bits.) Tj T*
+() Tj T*
+( Bar Fabrication) Tj T*
+() Tj T*
+(- images/10-blank-layout.jpg: labeled rough blanks before cutting.) Tj T*
+(- images/11-thickness-check.jpg: calipers on surfaced blank.) Tj T*
+(- images/12-node-marking.jpg: node positions marked on one bass and one treble bar.) Tj T*
+(- images/13-cnc-arch-setup.jpg: bar blank held for underside arch.) Tj T*
+(- images/14-arch-detail.jpg: finished underside arch with straightedge.) Tj T*
+(- images/15-support-hole-detail.jpg: clean support hole at node.) Tj T*
+() Tj T*
+( Resonators And Frame) Tj T*
+() Tj T*
+(- images/20-resonator-cutting.jpg: tube cutting/deburring setup.) Tj T*
+(- images/21-resonator-cap-detail.jpg: adjustable cap or stopper.) Tj T*
+(- images/22-frame-rail-layout.jpg: rail layout with node/support marks.) Tj T*
+(- images/23-dry-fit-overview.jpg: bars, rails, and resonators dry-fit.) Tj T*
+() Tj T*
+( Validation) Tj T*
+() Tj T*
+(- images/30-pilot-c3-tuning.jpg: C3 supported at nodes and measured.) Tj T*
+(- images/31-pilot-a4-tuning.jpg: A4 tuning reference.) Tj T*
+(- images/32-pilot-c6-tuning.jpg: C6 treble validation.) Tj T*
+(- images/33-validation-log.jpg: tuner, microphone, and validation.csv workflow.) Tj T*
+() Tj T*
+( Final Documentation) Tj T*
+() Tj T*
+(- images/40-finished-front.jpg: full instrument front view.) Tj T*
+(- images/41-finished-player-view.jpg: player reach/ergonomics view.) Tj T*
+(- images/42-resonator-underneath.jpg: underside resonator alignment.) Tj T*
+(- images/43-detail-beauty.jpg: finish/detail close-up.) Tj T*
+ET
+endstream
+endobj
+39 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 38 0 R >>
+endobj
+40 0 obj
+<< /Length 2429 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 19 of 20) Tj T*
+( ) Tj T*
+() Tj T*
+(<div class="page-break"></div>) Tj T*
+() Tj T*
+( risks.md) Tj T*
+() Tj T*
+(Project artifact.) Tj T*
+() Tj T*
+( Marimba Risk Register) Tj T*
+() Tj T*
+( Acoustic Risks) Tj T*
+() Tj T*
+( Bar pitch misses workbook prediction) Tj T*
+() Tj T*
+(- Risk: The selected Padauk stock has a different effective stiffness/density than the) Tj T*
+(workbook K constant.) Tj T*
+(- Impact: All bars may cut sharp or flat by a consistent amount.) Tj T*
+(- Test: Cut and measure C3, A4, and C6 pilot bars before the full run.) Tj T*
+(- Pass criterion: Post-arch bars can be brought within +/- 10 cents by normal sanding/tuning) Tj T*
+(allowance.) Tj T*
+(- Mitigation: Update K constant or arch schedule before cutting the remaining bars.) Tj T*
+() Tj T*
+( Resonator bore proxy is wrong) Tj T*
+() Tj T*
+(- Risk: The workbook currently uses bar width as the resonator bore/end-correction proxy.) Tj T*
+(- Impact: Tube lengths may be wrong after real tube diameters are selected.) Tj T*
+(- Test: Select actual tube ID, recalculate C3/A4/C6 resonator lengths, and compare response.) Tj T*
+(- Pass criterion: Resonator reinforcement peaks near target pitch without strong buzz or) Tj T*
+(deadening.) Tj T*
+(- Mitigation: Update family-spec.csv and regenerate resonator drawings before cutting all) Tj T*
+(tubes.) Tj T*
+() Tj T*
+( Structural Risks) Tj T*
+() Tj T*
+( Arch cut-through or weak low bars) Tj T*
+() Tj T*
+(- Risk: C3 reaches the 0.250 in minimum center thickness.) Tj T*
+(- Impact: Bass bars may crack, warp, or lose sustain.) Tj T*
+(- Test: Measure remaining center thickness after CNC and after final sanding.) Tj T*
+(- Pass criterion: No pilot bar falls below 0.250 in; no visible checking under normal strike) Tj T*
+(force.) Tj T*
+(- Mitigation: Increase minimum center thickness or choose denser/stiffer stock.) Tj T*
+() Tj T*
+( Support holes weaken bars) Tj T*
+() Tj T*
+(- Risk: 1/4 in holes near nodes may split if drilled too close to edges or with poor) Tj T*
+(backing.) Tj T*
+(- Impact: Cracks, buzzes, or support failure.) Tj T*
+(- Test: Drill sample holes in offcuts and pilot bars with the intended bit and backing) Tj T*
+(board.) Tj T*
+(- Pass criterion: Clean holes with no breakout or splitting.) Tj T*
+(- Mitigation: Reduce hole diameter, use cord grooves, or add rubber support posts instead.) Tj T*
+() Tj T*
+ET
+endstream
+endobj
+41 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 40 0 R >>
+endobj
+42 0 obj
+<< /Length 2666 >>
+stream
+BT
+/F1 9 Tf
+12 TL
+50 748 Td
+(Marimba CNC Bar And Resonator Build Packet - page 20 of 20) Tj T*
+( ) Tj T*
+( Ergonomic Risks) Tj T*
+() Tj T*
+( Frame too wide or awkward for reach) Tj T*
+() Tj T*
+(- Risk: C3-C6 chromatic layout may become too wide/deep once resonators and accidental row) Tj T*
+(are placed.) Tj T*
+(- Impact: Poor playing ergonomics or impossible transport.) Tj T*
+(- Test: Tape full-size bar positions on a bench and test mallet reach before building the) Tj T*
+(final frame.) Tj T*
+(- Pass criterion: Natural and accidental rows are reachable without shoulder strain for) Tj T*
+(intended player.) Tj T*
+(- Mitigation: Use a compact portable range, split frame, or revised bar spacing.) Tj T*
+() Tj T*
+( Supply Risks) Tj T*
+() Tj T*
+( Padauk availability and quality) Tj T*
+() Tj T*
+(- Risk: Clear long Padauk stock may be expensive, unstable, or unavailable.) Tj T*
+(- Impact: Build delays or inconsistent tone.) Tj T*
+(- Test: Request current quotes and inspect board quality/moisture before purchase.) Tj T*
+(- Pass criterion: Enough straight stock for 37 bars plus pilot failures.) Tj T*
+(- Mitigation: Use hard maple/cherry for an education prototype and update material) Tj T*
+(constants.) Tj T*
+() Tj T*
+( Tube/cap system mismatch) Tj T*
+() Tj T*
+(- Risk: Selected tube caps may leak, rattle, or be hard to tune.) Tj T*
+(- Impact: Weak or noisy resonators.) Tj T*
+(- Test: Build three tube prototypes with removable caps.) Tj T*
+(- Pass criterion: Tubes hold adjustment and do not buzz under playing vibration.) Tj T*
+(- Mitigation: Use adjustable stoppers, gasketed plugs, or alternate tube material.) Tj T*
+() Tj T*
+( Fit And Finish Risks) Tj T*
+() Tj T*
+( Finish shifts pitch or damps sustain) Tj T*
+() Tj T*
+(- Risk: A heavy finish adds mass and damping to tuned bars.) Tj T*
+(- Impact: Bars go flat or lose sustain after finishing.) Tj T*
+(- Test: Finish an offcut and one sacrificial tuned test bar; measure before/after Hz and) Tj T*
+(decay.) Tj T*
+(- Pass criterion: Pitch shift is predictable and within final tuning allowance.) Tj T*
+(- Mitigation: Use thin finish, tune after finish, or mask underside tuning zones until final) Tj T*
+(pass.) Tj T*
+() Tj T*
+( Frame buzzes after assembly) Tj T*
+() Tj T*
+(- Risk: Bars, tubes, caps, or fasteners touch unintentionally.) Tj T*
+(- Impact: Audible buzzes and unreliable validation data.) Tj T*
+(- Test: Strike every bar at soft, medium, and loud dynamics while muting adjacent parts.) Tj T*
+(- Pass criterion: No persistent buzz in the assembled frame.) Tj T*
+(- Mitigation: Add clearance, isolate hardware, and use thread-locking or removable dampers) Tj T*
+(where appropriate.) Tj T*
+ET
+endstream
+endobj
+43 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 42 0 R >>
+endobj
+xref
+0 44
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000253 00000 n 
+0000000321 00000 n 
+0000002830 00000 n 
+0000002956 00000 n 
+0000005234 00000 n 
+0000005360 00000 n 
+0000008065 00000 n 
+0000008191 00000 n 
+0000011100 00000 n 
+0000011228 00000 n 
+0000014982 00000 n 
+0000015110 00000 n 
+0000018923 00000 n 
+0000019051 00000 n 
+0000022682 00000 n 
+0000022810 00000 n 
+0000025214 00000 n 
+0000025342 00000 n 
+0000028194 00000 n 
+0000028322 00000 n 
+0000032225 00000 n 
+0000032353 00000 n 
+0000034391 00000 n 
+0000034519 00000 n 
+0000036331 00000 n 
+0000036459 00000 n 
+0000038869 00000 n 
+0000038997 00000 n 
+0000041622 00000 n 
+0000041750 00000 n 
+0000044171 00000 n 
+0000044299 00000 n 
+0000049245 00000 n 
+0000049373 00000 n 
+0000054303 00000 n 
+0000054431 00000 n 
+0000057059 00000 n 
+0000057187 00000 n 
+0000059669 00000 n 
+0000059797 00000 n 
+0000062516 00000 n 
+trailer
+<< /Size 44 /Root 1 0 R >>
+startxref
+62644
+%%EOF

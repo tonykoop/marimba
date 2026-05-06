@@ -1,0 +1,16 @@
+item,subassembly,part_name,qty,unit,material_or_spec,make_buy,status,notes
+1,Bar set,C3-C6 tuned bars,37,ea,African Padauk 7/8 in nominal edge thickness,make,workbook-derived,Individual dimensions in family-spec.csv.
+2,Resonators,C3-C6 resonator tubes,37,ea,PVC or aluminum tube; bore TBD by sourcing,buy,TBD,Lengths in family-spec.csv are first-pass quarter-wave values using workbook bore proxy.
+3,Resonators,Tube caps or adjustable stoppers,37,ea,Matched to selected tube bore,buy,TBD,Use adjustable closure for first validation build.
+4,Frame,Bass-side rail,1,ea,Hard maple or laminated hardwood,make,TBD,Final length and curve depend on CAD frame layout.
+5,Frame,Treble-side rail,1,ea,Hard maple or laminated hardwood,make,TBD,Must follow support nodes or carry adjustable posts.
+6,Frame,Cross members,4,ea,Hardwood or plywood fixture stock,make,TBD,Temporary shop frame acceptable for validation build.
+7,Hardware,Support cord,1,roll,Low-stretch braided cord or synthetic marimba cord,buy,TBD,Size to match 1/4 in node holes and rubber isolators.
+8,Hardware,Rubber support tubing or grommets,74,ea,Rubber or silicone isolation supports,buy,TBD,Two supports per bar minimum.
+9,Hardware,Frame fasteners,1,set,Wood screws, threaded inserts, washers,buy,TBD,Prefer removable fasteners for tuning access.
+10,CNC tooling,3/4 in ball-end mill,1,ea,Hardwood-capable ball-end cutter,buy,TBD,Primary arch undercut tool for bass/mid bars.
+11,CNC tooling,1/2 in ball-end mill,1,ea,Hardwood-capable ball-end cutter,buy,TBD,Alternative or treble arch finish tool.
+12,CNC tooling,1/4 in downcut spiral,1,ea,Hardwood-capable router bit,buy,TBD,Bar profile cleanup and fixture pockets.
+13,CNC tooling,1/8 in upcut spiral,1,ea,Hardwood-capable router bit,buy,TBD,Small reliefs, pilot features, or templates.
+14,Finish,Sanding and finish consumables,1,set,80-320 grit abrasives plus oil/shellac/lacquer TBD,buy,TBD,Finish must not load bar underside or node areas.
+15,Measurement,Tuning and data capture,1,set,Chromatic tuner, microphone, calipers, scale,buy/owned,TBD,Needed for validation.csv completion.

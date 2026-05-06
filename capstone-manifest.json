@@ -1,0 +1,32 @@
+{
+  "packet_dir": "/mnt/c/Users/Tony/Documents/GitHub/marimba",
+  "title": "Marimba CNC Bar And Resonator Build Packet",
+  "generated": "2026-05-06",
+  "files_included": [
+    "design.md",
+    "bom.csv",
+    "sourcing.csv",
+    "cut-list.csv",
+    "drawing-brief.md",
+    "assembly-manual.md",
+    "validation.csv",
+    "supplier-rfq.md",
+    "visual-bom-brief.md",
+    "README.md",
+    "family-spec.csv",
+    "photo-shotlist.md",
+    "risks.md"
+  ],
+  "outputs": {
+    "capstone_deck_markdown": "/mnt/c/Users/Tony/Documents/GitHub/marimba/capstone-deck.md",
+    "capstone_deck_pptx": "/mnt/c/Users/Tony/Documents/GitHub/marimba/capstone-deck.pptx",
+    "print_packet_markdown": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.md",
+    "print_packet_html": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.html",
+    "print_packet_pdf": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.pdf"
+  },
+  "notes": [
+    "PPTX was generated from capstone-deck.md with Pandoc because python-pptx is not installed in the WSL Python runtime.",
+    "PDF was generated as a text-first shop packet from print-packet.md because reportlab/weasyprint are not installed and headless LibreOffice PDF export was unavailable in the sandbox.",
+    "Use print-packet.html for browser review and higher-fidelity browser print-to-PDF when available."
+  ]
+}

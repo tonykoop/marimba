@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marimba Design Packet — Tony Koop's Build Log</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="hero"><div class="hero-img" style="background:linear-gradient(135deg,#5c3517,#a0522d);height:360px;"></div><div class="hero-text"><h1>Marimba Design Packet</h1><p>Build a 37-bar C3-C6 marimba packet from the existing workbook design table. The first build target is a CNC-friendly instrument with African Padauk bars, parabolic underside arch undercuts, drilled node supports, quarter-wave resonators, and a frame layout that can become a SolidWorks master sketch.</p></div></header>
+<main>
+<section><h2>What this is</h2><p>Build a 37-bar C3-C6 marimba packet from the existing workbook design table. The first build target is a CNC-friendly instrument with African Padauk bars, parabolic underside arch undercuts, drilled node supports, quarter-wave resonators, and a frame layout that can become a SolidWorks master sketch.</p>
+<p>The useful boundary for this packet is &quot;build-ready documentation, not finished CAD.&quot; Native SolidWorks files do not exist yet. The CAD folder defines the global-variable and design-table contract Tony can use to build the real model.</p></section>
+<section><h2>The design</h2><h3>Bar Pitch</h3>
+<p>The marimba bars are treated as free-free beams. The first flexural mode uses:</p>
+<p>```text
+lambda_1 = 4.730
+f_1 = (lambda_1^2 / (2*pi*L^2)) * sqrt(E*I/(rho*A))
+```</p>
+<p>The workbook uses the practical shop form:</p>
+<p>```text
+f ~= K * t / L^2
+L ~= sqrt(K * t / f)
+```</p>
+<p>where:</p>
+<ul><li>`f` is target frequency in Hz.</li><li>`K` is the material-specific free-free bar constant.</li><li>`t` is nominal bar thickness at the edge.</li><li>`L` is bar length.</li></ul>
+<p>For the active packet:</p>
+<p>```text
+K = 155502
+t = 0.875 in
+```</p>
+<p>The workbook material library derives this free-free K from the beam material properties and the `lambda_1 = 4.730` mode shape. Do not apply flute-bore K2 corrections here; those belong to Native American style flute bore correction work, not beam idiophones.</p>
+<h3>Nodes And Supports</h3>
+<p>The suspension node locations are:</p>
+<p>```text
+node_1 = 0.224 * L
+node_2 = 0.776 * L
+```</p>
+<p>Cord holes and rail pins reference these two locations. Holes must be drilled at the nodal line so the support does not damp the main mode.</p>
+<h3>Arch Undercut</h3>
+<p>The workbook defines a linear MIDI-scaled arch-depth schedule:</p>
+<p>```text
+arch_depth = (edge_thickness - min_center_thickness) * min(1, (96 - midi)/48)
+center_thickness = edge_thickness - arch_depth
+```</p>
+<p>This makes the low bars carry the deepest undercut and the high bars approach a shallow arch. The current minimum center thickness is `0.250 in`, so C3 reaches the minimum while C6 remains about `0.719 in` at center.</p>
+<p>The arch should be cut as a centered parabolic underside relief over roughly 60 percent of the bar length. Final voicing still requires controlled sanding and tuner checks; the workbook is the first-pass schedule.</p>
+<h3>Resonators</h3>
+<p>The resonator tubes are treated as quarter-wave closed pipes:</p>
+<p>```text
+L_res = 13552 / (4 * f) - 0.82 * bore
+```</p>
+<p>The sheet currently uses the bar-width column as the resonator bore/end-correction proxy. That is acceptable as a first-pass planning value, but the sourcing pass should decide real tube diameters and update `family-spec.csv` if the selected bore differs from the workbook proxy.</p>
+<p>The distinction is important:</p>
+<ul><li>Bar pitch is tuned by bar length, thickness, arch geometry, and material.</li><li>Resonator length is tuned to reinforce the already-tuned bar frequency.</li><li>A resonator mismatch changes sustain/loudness/color; it does not fix a wrong bar pitch.</li></ul><figure><object data="assets/drawings/MAR-A3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-A3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-A4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-A4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-A5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-A5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Asharp3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Asharp3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Asharp4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Asharp4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Asharp5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Asharp5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-B3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-B3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-B4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-B4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-B5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-B5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-C3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-C3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-C4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-C4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-C5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-C5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-C6-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-C6-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Csharp3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Csharp3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Csharp4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Csharp4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Csharp5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Csharp5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-D3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-D3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-D4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-D4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-D5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-D5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Dsharp3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Dsharp3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Dsharp4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Dsharp4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Dsharp5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Dsharp5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-E3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-E3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-E4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-E4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-E5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-E5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-F3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-F3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-F4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-F4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-F5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-F5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Fsharp3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Fsharp3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Fsharp4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Fsharp4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Fsharp5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Fsharp5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-G3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-G3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-G4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-G4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-G5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-G5-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Gsharp3-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Gsharp3-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Gsharp4-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Gsharp4-body</figcaption></figure>
+<figure><object data="assets/drawings/MAR-Gsharp5-body.svg" type="image/svg+xml" class="drawing"></object><figcaption>MAR-Gsharp5-body</figcaption></figure>
+<figure><object data="assets/drawings/arch-undercut-section.svg" type="image/svg+xml" class="drawing"></object><figcaption>arch-undercut-section</figcaption></figure>
+<figure><object data="assets/drawings/family-overview.svg" type="image/svg+xml" class="drawing"></object><figcaption>family-overview</figcaption></figure>
+<figure><object data="assets/drawings/frame-overview.svg" type="image/svg+xml" class="drawing"></object><figcaption>frame-overview</figcaption></figure>
+<figure><object data="assets/drawings/resonator-layout.svg" type="image/svg+xml" class="drawing"></object><figcaption>resonator-layout</figcaption></figure></section>
+<section><h2>The build</h2><h2>Marimba Assembly Manual</h2>
+<h3>Build Philosophy</h3>
+<p>Cut three pilot bars before committing the whole set: C3, A4, and C6. They bound the low arch-depth limit, the center of the scale, and the short/high-bar behavior. Use their measured pitch and resonator response to decide whether the workbook K constant, selected wood, and CNC arch path are ready for the full run.</p>
+<h3>Preflight</h3>
+<ul><li>[ ] Confirm active range: C3-C6 chromatic, 37 bars.</li><li>[ ] Confirm selected bar wood and moisture content.</li><li>[ ] Confirm actual resonator tube bore and update `family-spec.csv` if it differs from the workbook proxy.</li><li>[ ] Confirm CNC bed size, hold-down, bit length, and dust collection.</li><li>[ ] Print or open `drawings/arch-undercut-section.svg`, `drawings/resonator-layout.svg`, and `cnc/setup-sheet.md`.</li></ul>
+<h3>Bar Workflow</h3>
+<p>1. Break down rough Padauk stock into oversize blanks using `cut-list.csv`.
+2. Joint one face and edge. Mark grain direction and top face.
+3. Plane or sand each blank to `0.875 in` nominal edge thickness.
+4. Label every blank with `member_id`, note, target Hz, and top face.
+5. CNC profile each bar oversize or leave tabs for final cleanup.
+6. Mark node positions from `family-spec.csv`.
+7. Drill support/cord holes at the node line. Start with `0.250 in`, then adapt to the actual cord/rubber support system.
+8. Cut the underside parabolic arch. Use a conservative Z-zero and leave a sanding/tuning allowance.
+9. Deburr and sand without rounding node contact areas excessively.
+10. Strike-test on soft supports at the node positions and record measured Hz in `validation.csv`.</p>
+<h3>Tuning Direction</h3>
+<ul><li>To lower pitch: remove material from the center underside arch region.</li><li>To raise pitch: shorten the bar or reduce mass near the ends; raising pitch after over-cutting is limited, so sneak up slowly.</li><li>Keep both ends visually balanced. Asymmetric mass removal can pull modes sideways or create uneven sustain.</li><li>Tune bars before final resonator matching.</li></ul>
+<h3>Resonator Workflow</h3>
+<p>1. Select tube material and bore.
+2. Recalculate tube lengths if the selected bore differs from `resonator_bore_in`.
+3. Cut tubes oversize per `cut-list.csv`.
+4. Deburr both ends.
+5. Add removable caps or adjustable stoppers.
+6. Mount under the matching bar with the opening centered below the vibrating region.
+7. Trim or adjust caps after the bar pitch is stable in the frame.
+8. Record final resonator length, cap style, and response notes.</p>
+<h3>Frame Workflow</h3>
+<p>1. Build a temporary straight or lightly tapered validation frame before the final furniture-grade frame.
+2. Lay out rail supports from the node schedule, not from equal bar-end offsets.
+3. Keep resonator access open so tubes can be removed and tuned.
+4. Add cross members only after checking mallet clearance, tube clearance, and player reach.
+5. Use removable fasteners until tuning and buzz checks are done.</p>
+<h3>Final Checks</h3>
+<ul><li>[ ] All bars are labeled and match `family-spec.csv`.</li><li>[ ] Node supports touch at node positions.</li><li>[ ] No bar contacts the frame except through intended rubber/cord supports.</li><li>[ ] No resonator tube touches a vibrating bar.</li><li>[ ] Every measured pitch has a `validation.csv` row.</li><li>[ ] Any bar outside +/- 10 cents after final tuning is flagged for rework.</li></ul><p class="placeholder">No process photos in <code>images/</code>. Add at least one to populate this section.</p></section>
+<section><h2>The numbers</h2><h3>BOM</h3><table><thead><tr><th>item</th><th>subassembly</th><th>part_name</th><th>qty</th><th>unit</th><th>material_or_spec</th><th>make_buy</th><th>status</th><th>notes</th></tr></thead><tbody><tr><td class="num">1</td><td>Bar set</td><td>C3-C6 tuned bars</td><td class="num">37</td><td>ea</td><td>African Padauk 7/8 in nominal edge thickness</td><td>make</td><td>workbook-derived</td><td>Individual dimensions in family-spec.csv.</td></tr>
+<tr><td class="num">2</td><td>Resonators</td><td>C3-C6 resonator tubes</td><td class="num">37</td><td>ea</td><td>PVC or aluminum tube; bore TBD by sourcing</td><td>buy</td><td>TBD</td><td>Lengths in family-spec.csv are first-pass quarter-wave values using workbook bore proxy.</td></tr>
+<tr><td class="num">3</td><td>Resonators</td><td>Tube caps or adjustable stoppers</td><td class="num">37</td><td>ea</td><td>Matched to selected tube bore</td><td>buy</td><td>TBD</td><td>Use adjustable closure for first validation build.</td></tr>
+<tr><td class="num">4</td><td>Frame</td><td>Bass-side rail</td><td class="num">1</td><td>ea</td><td>Hard maple or laminated hardwood</td><td>make</td><td>TBD</td><td>Final length and curve depend on CAD frame layout.</td></tr>
+<tr><td class="num">5</td><td>Frame</td><td>Treble-side rail</td><td class="num">1</td><td>ea</td><td>Hard maple or laminated hardwood</td><td>make</td><td>TBD</td><td>Must follow support nodes or carry adjustable posts.</td></tr>
+<tr><td class="num">6</td><td>Frame</td><td>Cross members</td><td class="num">4</td><td>ea</td><td>Hardwood or plywood fixture stock</td><td>make</td><td>TBD</td><td>Temporary shop frame acceptable for validation build.</td></tr>
+<tr><td class="num">7</td><td>Hardware</td><td>Support cord</td><td class="num">1</td><td>roll</td><td>Low-stretch braided cord or synthetic marimba cord</td><td>buy</td><td>TBD</td><td>Size to match 1/4 in node holes and rubber isolators.</td></tr>
+<tr><td class="num">8</td><td>Hardware</td><td>Rubber support tubing or grommets</td><td class="num">74</td><td>ea</td><td>Rubber or silicone isolation supports</td><td>buy</td><td>TBD</td><td>Two supports per bar minimum.</td></tr>
+<tr><td class="num">9</td><td>Hardware</td><td>Frame fasteners</td><td class="num">1</td><td>set</td><td>Wood screws</td><td> threaded inserts</td><td> washers</td><td>buy</td><td>TBD</td><td>Prefer removable fasteners for tuning access.</td></tr>
+<tr><td class="num">10</td><td>CNC tooling</td><td>3/4 in ball-end mill</td><td class="num">1</td><td>ea</td><td>Hardwood-capable ball-end cutter</td><td>buy</td><td>TBD</td><td>Primary arch undercut tool for bass/mid bars.</td></tr>
+<tr><td class="num">11</td><td>CNC tooling</td><td>1/2 in ball-end mill</td><td class="num">1</td><td>ea</td><td>Hardwood-capable ball-end cutter</td><td>buy</td><td>TBD</td><td>Alternative or treble arch finish tool.</td></tr>
+<tr><td class="num">12</td><td>CNC tooling</td><td>1/4 in downcut spiral</td><td class="num">1</td><td>ea</td><td>Hardwood-capable router bit</td><td>buy</td><td>TBD</td><td>Bar profile cleanup and fixture pockets.</td></tr>
+<tr><td class="num">13</td><td>CNC tooling</td><td>1/8 in upcut spiral</td><td class="num">1</td><td>ea</td><td>Hardwood-capable router bit</td><td>buy</td><td>TBD</td><td>Small reliefs</td><td> pilot features</td><td> or templates.</td></tr>
+<tr><td class="num">14</td><td>Finish</td><td>Sanding and finish consumables</td><td class="num">1</td><td>set</td><td>80-320 grit abrasives plus oil/shellac/lacquer TBD</td><td>buy</td><td>TBD</td><td>Finish must not load bar underside or node areas.</td></tr>
+<tr><td class="num">15</td><td>Measurement</td><td>Tuning and data capture</td><td class="num">1</td><td>set</td><td>Chromatic tuner</td><td> microphone</td><td> calipers</td><td> scale</td><td>buy/owned</td><td>TBD</td><td>Needed for validation.csv completion.</td></tr></tbody></table><h3>Cut list</h3><table><thead><tr><th>cut_id</th><th>subassembly</th><th>qty</th><th>material</th><th>rough_dimension_in</th><th>finished_dimension_or_reference</th><th>operation</th><th>notes</th></tr></thead><tbody><tr><td>CUT-BAR-BASS</td><td>Bars C3-B3</td><td class="num">12</td><td>African Padauk</td><td>34.0 x 2.25 x 1.00 each max rough blank</td><td>See MAR-C3 through MAR-B3 in family-spec.csv</td><td>Surface/thickness/profile/arch/drill</td><td>Long bars are the stock-yield driver; cut long and tune down.</td></tr>
+<tr><td>CUT-BAR-MID</td><td>Bars C4-B4</td><td class="num">12</td><td>African Padauk</td><td>24.0 x 2.00 x 1.00 each max rough blank</td><td>See MAR-C4 through MAR-B4 in family-spec.csv</td><td>Surface/thickness/profile/arch/drill</td><td>Keep grain direction consistent across the octave.</td></tr>
+<tr><td>CUT-BAR-TREBLE</td><td>Bars C5-B5</td><td class="num">12</td><td>African Padauk</td><td>17.0 x 1.75 x 1.00 each max rough blank</td><td>See MAR-C5 through MAR-B5 in family-spec.csv</td><td>Surface/thickness/profile/arch/drill</td><td>Smaller arch depths need careful Z-zero discipline.</td></tr>
+<tr><td>CUT-BAR-TOP</td><td>Bars C6</td><td class="num">1</td><td>African Padauk</td><td>12.5 x 1.50 x 1.00 rough blank</td><td>See MAR-C6 in family-spec.csv</td><td>Surface/thickness/profile/arch/drill</td><td>High bar is short and sensitive to over-sanding.</td></tr>
+<tr><td>CUT-RES-BASS</td><td>Resonators C3-B3</td><td class="num">12</td><td>PVC or aluminum tube</td><td>Cut 1.0 in oversize from family-spec.csv lengths</td><td>Final trim after bar tuning</td><td>Tube cut/deburr/cap/drill</td><td>Use selected tube bore</td><td> not blindly the workbook bore proxy.</td></tr>
+<tr><td>CUT-RES-MID</td><td>Resonators C4-B4</td><td class="num">12</td><td>PVC or aluminum tube</td><td>Cut 0.75 in oversize from family-spec.csv lengths</td><td>Final trim after bar tuning</td><td>Tube cut/deburr/cap/drill</td><td>Mark each tube with note and target Hz.</td></tr>
+<tr><td>CUT-RES-TREBLE</td><td>Resonators C5-C6</td><td class="num">13</td><td>PVC or aluminum tube</td><td>Cut 0.5 in oversize from family-spec.csv lengths</td><td>Final trim after bar tuning</td><td>Tube cut/deburr/cap/drill</td><td>Very short tubes may need larger bore or box coupling review.</td></tr>
+<tr><td>CUT-RAIL-BASS</td><td>Frame bass rail</td><td class="num">1</td><td>Hard maple or laminated hardwood</td><td>TBD</td><td>Node-following rail curve from CAD</td><td>Rip/plane/CNC drill</td><td>Do not freeze until bar spacing and tube diameters are selected.</td></tr>
+<tr><td>CUT-RAIL-TREBLE</td><td>Frame treble rail</td><td class="num">1</td><td>Hard maple or laminated hardwood</td><td>TBD</td><td>Node-following rail curve from CAD</td><td>Rip/plane/CNC drill</td><td>Keep removable for tuning access.</td></tr>
+<tr><td>CUT-CROSS</td><td>Frame cross members</td><td class="num">4</td><td>Hardwood or plywood</td><td>TBD</td><td>Width set by resonator clearance</td><td>Cut/drill/assemble</td><td>Prototype frame can be sacrificial.</td></tr>
+<tr><td>CUT-JIG</td><td>Bar underside arch fixture</td><td class="num">1</td><td>MDF or plywood spoilboard</td><td>CNC bed sized</td><td>Datum fence and tabs per cnc/setup-sheet.md</td><td>CNC fixture</td><td>Use repeatable X datum and replaceable spoilboard.</td></tr></tbody></table></section>
+<section><h2>Tuning &amp; validation</h2><table><thead><tr><th>member_id</th><th>target_note</th><th>target_hz</th><th>predicted_length_in</th><th>stage</th><th>measured_hz</th><th>cents_error</th><th>tuner</th><th>environment</th><th>notes</th></tr></thead><tbody><tr><td>MAR-C3</td><td>C3</td><td class="num">130.813</td><td class="num">32.251</td><td>prebuild</td><td></td><td></td><td></td><td></td><td>Pilot low bar; record flat blank</td><td> post-arch</td><td> post-sand</td><td> final frame.</td></tr>
+<tr><td>MAR-Csharp3</td><td>C#3</td><td class="num">138.591</td><td class="num">31.333</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-D3</td><td>D3</td><td class="num">146.832</td><td class="num">30.441</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Dsharp3</td><td>D#3</td><td class="num">155.563</td><td class="num">29.575</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-E3</td><td>E3</td><td class="num">164.814</td><td class="num">28.733</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-F3</td><td>F3</td><td class="num">174.614</td><td class="num">27.915</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Fsharp3</td><td>F#3</td><td class="num">184.997</td><td class="num">27.120</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-G3</td><td>G3</td><td class="num">195.998</td><td class="num">26.348</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Gsharp3</td><td>G#3</td><td class="num">207.652</td><td class="num">25.598</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-A3</td><td>A3</td><td class="num">220.000</td><td class="num">24.869</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Asharp3</td><td>A#3</td><td class="num">233.082</td><td class="num">24.161</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-B3</td><td>B3</td><td class="num">246.942</td><td class="num">23.473</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-C4</td><td>C4</td><td class="num">261.626</td><td class="num">22.805</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Csharp4</td><td>C#4</td><td class="num">277.183</td><td class="num">22.156</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-D4</td><td>D4</td><td class="num">293.665</td><td class="num">21.525</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Dsharp4</td><td>D#4</td><td class="num">311.127</td><td class="num">20.912</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-E4</td><td>E4</td><td class="num">329.628</td><td class="num">20.317</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-F4</td><td>F4</td><td class="num">349.228</td><td class="num">19.739</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Fsharp4</td><td>F#4</td><td class="num">369.994</td><td class="num">19.177</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-G4</td><td>G4</td><td class="num">391.995</td><td class="num">18.631</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Gsharp4</td><td>G#4</td><td class="num">415.305</td><td class="num">18.100</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-A4</td><td>A4</td><td class="num">440.000</td><td class="num">17.585</td><td>prebuild</td><td></td><td></td><td></td><td></td><td>Pilot reference bar; use to calibrate K and arch schedule.</td></tr>
+<tr><td>MAR-Asharp4</td><td>A#4</td><td class="num">466.164</td><td class="num">17.085</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-B4</td><td>B4</td><td class="num">493.883</td><td class="num">16.598</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-C5</td><td>C5</td><td class="num">523.251</td><td class="num">16.126</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Csharp5</td><td>C#5</td><td class="num">554.365</td><td class="num">15.667</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-D5</td><td>D5</td><td class="num">587.330</td><td class="num">15.221</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Dsharp5</td><td>D#5</td><td class="num">622.254</td><td class="num">14.787</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-E5</td><td>E5</td><td class="num">659.255</td><td class="num">14.366</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-F5</td><td>F5</td><td class="num">698.456</td><td class="num">13.957</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Fsharp5</td><td>F#5</td><td class="num">739.989</td><td class="num">13.560</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-G5</td><td>G5</td><td class="num">783.991</td><td class="num">13.174</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Gsharp5</td><td>G#5</td><td class="num">830.609</td><td class="num">12.799</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-A5</td><td>A5</td><td class="num">880.000</td><td class="num">12.435</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-Asharp5</td><td>A#5</td><td class="num">932.328</td><td class="num">12.081</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-B5</td><td>B5</td><td class="num">987.767</td><td class="num">11.737</td><td>prebuild</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MAR-C6</td><td>C6</td><td class="num">1046.502</td><td class="num">11.403</td><td>prebuild</td><td></td><td></td><td></td><td></td><td>Pilot high bar; validate shallow arch and short resonator behavior.</td></tr></tbody></table></section>
+<section><h2>Known risks</h2><h2>Marimba Risk Register</h2>
+<h3>Acoustic Risks</h3>
+<h3>Bar pitch misses workbook prediction</h3>
+<ul><li>Risk: The selected Padauk stock has a different effective stiffness/density than the workbook K constant.</li><li>Impact: All bars may cut sharp or flat by a consistent amount.</li><li>Test: Cut and measure C3, A4, and C6 pilot bars before the full run.</li><li>Pass criterion: Post-arch bars can be brought within +/- 10 cents by normal sanding/tuning allowance.</li><li>Mitigation: Update K constant or arch schedule before cutting the remaining bars.</li></ul>
+<h3>Resonator bore proxy is wrong</h3>
+<ul><li>Risk: The workbook currently uses bar width as the resonator bore/end-correction proxy.</li><li>Impact: Tube lengths may be wrong after real tube diameters are selected.</li><li>Test: Select actual tube ID, recalculate C3/A4/C6 resonator lengths, and compare response.</li><li>Pass criterion: Resonator reinforcement peaks near target pitch without strong buzz or deadening.</li><li>Mitigation: Update `family-spec.csv` and regenerate resonator drawings before cutting all tubes.</li></ul>
+<h3>Structural Risks</h3>
+<h3>Arch cut-through or weak low bars</h3>
+<ul><li>Risk: C3 reaches the `0.250 in` minimum center thickness.</li><li>Impact: Bass bars may crack, warp, or lose sustain.</li><li>Test: Measure remaining center thickness after CNC and after final sanding.</li><li>Pass criterion: No pilot bar falls below `0.250 in`; no visible checking under normal strike force.</li><li>Mitigation: Increase minimum center thickness or choose denser/stiffer stock.</li></ul>
+<h3>Support holes weaken bars</h3>
+<ul><li>Risk: 1/4 in holes near nodes may split if drilled too close to edges or with poor backing.</li><li>Impact: Cracks, buzzes, or support failure.</li><li>Test: Drill sample holes in offcuts and pilot bars with the intended bit and backing board.</li><li>Pass criterion: Clean holes with no breakout or splitting.</li><li>Mitigation: Reduce hole diameter, use cord grooves, or add rubber support posts instead.</li></ul>
+<h3>Ergonomic Risks</h3>
+<h3>Frame too wide or awkward for reach</h3>
+<ul><li>Risk: C3-C6 chromatic layout may become too wide/deep once resonators and accidental row are placed.</li><li>Impact: Poor playing ergonomics or impossible transport.</li><li>Test: Tape full-size bar positions on a bench and test mallet reach before building the final frame.</li><li>Pass criterion: Natural and accidental rows are reachable without shoulder strain for intended player.</li><li>Mitigation: Use a compact portable range, split frame, or revised bar spacing.</li></ul>
+<h3>Supply Risks</h3>
+<h3>Padauk availability and quality</h3>
+<ul><li>Risk: Clear long Padauk stock may be expensive, unstable, or unavailable.</li><li>Impact: Build delays or inconsistent tone.</li><li>Test: Request current quotes and inspect board quality/moisture before purchase.</li><li>Pass criterion: Enough straight stock for 37 bars plus pilot failures.</li><li>Mitigation: Use hard maple/cherry for an education prototype and update material constants.</li></ul>
+<h3>Tube/cap system mismatch</h3>
+<ul><li>Risk: Selected tube caps may leak, rattle, or be hard to tune.</li><li>Impact: Weak or noisy resonators.</li><li>Test: Build three tube prototypes with removable caps.</li><li>Pass criterion: Tubes hold adjustment and do not buzz under playing vibration.</li><li>Mitigation: Use adjustable stoppers, gasketed plugs, or alternate tube material.</li></ul>
+<h3>Fit And Finish Risks</h3>
+<h3>Finish shifts pitch or damps sustain</h3>
+<ul><li>Risk: A heavy finish adds mass and damping to tuned bars.</li><li>Impact: Bars go flat or lose sustain after finishing.</li><li>Test: Finish an offcut and one sacrificial tuned test bar; measure before/after Hz and decay.</li><li>Pass criterion: Pitch shift is predictable and within final tuning allowance.</li><li>Mitigation: Use thin finish, tune after finish, or mask underside tuning zones until final pass.</li></ul>
+<h3>Frame buzzes after assembly</h3>
+<ul><li>Risk: Bars, tubes, caps, or fasteners touch unintentionally.</li><li>Impact: Audible buzzes and unreliable validation data.</li><li>Test: Strike every bar at soft, medium, and loud dynamics while muting adjacent parts.</li><li>Pass criterion: No persistent buzz in the assembled frame.</li><li>Mitigation: Add clearance, isolate hardware, and use thread-locking or removable dampers where appropriate.</li></ul></section>
+<section><h2>Family overview</h2><ul><li><a href="family/MAR-C3.html">MAR-C3 — C3</a></li><li><a href="family/MAR-Csharp3.html">MAR-Csharp3 — C#3</a></li><li><a href="family/MAR-D3.html">MAR-D3 — D3</a></li><li><a href="family/MAR-Dsharp3.html">MAR-Dsharp3 — D#3</a></li><li><a href="family/MAR-E3.html">MAR-E3 — E3</a></li><li><a href="family/MAR-F3.html">MAR-F3 — F3</a></li><li><a href="family/MAR-Fsharp3.html">MAR-Fsharp3 — F#3</a></li><li><a href="family/MAR-G3.html">MAR-G3 — G3</a></li><li><a href="family/MAR-Gsharp3.html">MAR-Gsharp3 — G#3</a></li><li><a href="family/MAR-A3.html">MAR-A3 — A3</a></li><li><a href="family/MAR-Asharp3.html">MAR-Asharp3 — A#3</a></li><li><a href="family/MAR-B3.html">MAR-B3 — B3</a></li><li><a href="family/MAR-C4.html">MAR-C4 — C4</a></li><li><a href="family/MAR-Csharp4.html">MAR-Csharp4 — C#4</a></li><li><a href="family/MAR-D4.html">MAR-D4 — D4</a></li><li><a href="family/MAR-Dsharp4.html">MAR-Dsharp4 — D#4</a></li><li><a href="family/MAR-E4.html">MAR-E4 — E4</a></li><li><a href="family/MAR-F4.html">MAR-F4 — F4</a></li><li><a href="family/MAR-Fsharp4.html">MAR-Fsharp4 — F#4</a></li><li><a href="family/MAR-G4.html">MAR-G4 — G4</a></li><li><a href="family/MAR-Gsharp4.html">MAR-Gsharp4 — G#4</a></li><li><a href="family/MAR-A4.html">MAR-A4 — A4</a></li><li><a href="family/MAR-Asharp4.html">MAR-Asharp4 — A#4</a></li><li><a href="family/MAR-B4.html">MAR-B4 — B4</a></li><li><a href="family/MAR-C5.html">MAR-C5 — C5</a></li><li><a href="family/MAR-Csharp5.html">MAR-Csharp5 — C#5</a></li><li><a href="family/MAR-D5.html">MAR-D5 — D5</a></li><li><a href="family/MAR-Dsharp5.html">MAR-Dsharp5 — D#5</a></li><li><a href="family/MAR-E5.html">MAR-E5 — E5</a></li><li><a href="family/MAR-F5.html">MAR-F5 — F5</a></li><li><a href="family/MAR-Fsharp5.html">MAR-Fsharp5 — F#5</a></li><li><a href="family/MAR-G5.html">MAR-G5 — G5</a></li><li><a href="family/MAR-Gsharp5.html">MAR-Gsharp5 — G#5</a></li><li><a href="family/MAR-A5.html">MAR-A5 — A5</a></li><li><a href="family/MAR-Asharp5.html">MAR-Asharp5 — A#5</a></li><li><a href="family/MAR-B5.html">MAR-B5 — B5</a></li><li><a href="family/MAR-C6.html">MAR-C6 — C6</a></li></ul></section>
+<section><h2>Resources</h2><ul><li><a href="../README.md">Project README</a></li><li><a href="../capstone-deck.pptx">Capstone deck (.pptx)</a></li><li><a href="../print-packet.pdf">Printable shop packet (.pdf)</a></li><li><a href="https://github.com/tonykoop">Tony's GitHub</a></li></ul></section>
+</main>
+<footer>
+Built by Tony Koop · CC-BY 4.0 · <a href="https://github.com/tonykoop">github.com/tonykoop</a>
+</footer>
+</body>
+</html>
