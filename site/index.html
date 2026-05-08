@@ -11,6 +11,8 @@
 <main>
 <section><h2>What this is</h2><p>Build a 37-bar C3-C6 marimba packet from the existing workbook design table. The first build target is a CNC-friendly instrument with African Padauk bars, parabolic underside arch undercuts, drilled node supports, quarter-wave resonators, and a frame layout that can become a SolidWorks master sketch.</p>
 <p>The useful boundary for this packet is &quot;build-ready documentation, not finished CAD.&quot; Native SolidWorks files do not exist yet. The CAD folder defines the global-variable and design-table contract Tony can use to build the real model.</p></section>
+<section><h2>Jig decision layer</h2><p><code>jig-decision.md</code> is the pilot-build stop/go record. It chooses a staged fixture set for C3, A4, and C6 before the full 37-bar Padauk run: a surfacing carrier, two-sided CNC spoilboard, soft arch cradle, node-drilling backer, resonator V-block, temporary resonator rail, and validation frame.</p>
+<p>Full production stays blocked until the pilot rows in <code>validation.csv</code> have measured values for <code>flat_blank</code>, <code>post_arch</code>, <code>post_sand</code>, <code>resonator_coupled</code>, and <code>final_frame</code>.</p></section>
 <section><h2>The design</h2><h3>Bar Pitch</h3>
 <p>The marimba bars are treated as free-free beams. The first flexural mode uses:</p>
 <p>```text

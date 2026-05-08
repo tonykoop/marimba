@@ -128,6 +128,8 @@ The support rails follow the node path rather than a fixed straight rail. For ea
 - Frame pin/rubber support must touch at the node, not at the bar end.
 - Bar spacing and frame taper are `TBD` until mallet clearance and resonator tube diameters are chosen.
 
+`jig-decision.md` is the controlling fixture decision record. It keeps the pilot workflow staged: build only the carrier, two-sided spoilboard, arch cradle, node-drilling support, and tube V-block needed for C3/A4/C6 before freezing full-set CAM or final frame geometry.
+
 ## SolidWorks MasterLayout Plan
 
 The SolidWorks model should be driven from a master sketch and equations:

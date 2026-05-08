@@ -12,6 +12,7 @@
 - Source dimensions come from `family-spec.csv` and `marimba-design-table.xlsx`.
 - The CNC plan assumes African Padauk blanks surfaced to `0.875 in`.
 - Resonator tube bore is still a sourcing variable; update tube lengths after selecting actual ID.
+- Fixture choices are controlled by `jig-decision.md`; do not promote pilot jigs to full-set CAM until C3/A4/C6 pass.
 
 ## Pilot Gate
 
@@ -37,8 +38,23 @@ Release to full production only if:
 - Outputs: pilot-build checklist
 - Checks:
   - C3/A4/C6 pilot bars identified.
+  - `jig-decision.md` reviewed and pilot-only fixture scope confirmed.
   - Actual wood species and tube bore confirmed.
   - Full-set cutting is held until pilot data is reviewed.
+
+### OP-205 - Build pilot jig set
+
+- Machine: Bench and CNC router
+- Tool: MDF/plywood fixture stock, clamps, tape, centerline pins, backer board, V-block stock
+- Workholding: Planer carrier, two-sided spoilboard, soft arch cradle, node-drilling backer, tube V-block
+- Datum: Top face A, left end B, bar centerline C
+- Inputs: `jig-decision.md`, `family-spec.csv`, `drawings/arch-undercut-section.svg`
+- Outputs: Pilot jig set for C3, A4, and C6
+- Checks:
+  - A/B/C datums transfer through profile, flip, arch, drill, and tube-cut operations.
+  - Clamp/tape zones avoid node holes and arch region.
+  - C3/A4/C6 air cuts clear all hold-downs.
+  - Full 37-bar nest remains blocked until pilot validation rows are measured.
 
 ### OP-110 - Surface and thickness bar blanks
 

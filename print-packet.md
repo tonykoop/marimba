@@ -16,6 +16,7 @@ Packet folder: `/mnt/c/Users/Tony/Documents/GitHub/marimba`
 | `validation.csv` | Target/measured values, tolerance, environment, result, and tuning/build action log. |
 | `supplier-rfq.md` | Supplier email/request-for-quote starter. |
 | `visual-bom-brief.md` | Art direction for an image-forward visual BOM. |
+| `jig-decision.md` | Fixture decision record and pilot jig release gates. |
 | `README.md` | Project artifact. |
 | `family-spec.csv` | Project artifact. |
 | `photo-shotlist.md` | Project artifact. |

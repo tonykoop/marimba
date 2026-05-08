@@ -3,7 +3,7 @@ CUT-BAR-BASS,Bars C3-B3,12,African Padauk,"34.0 x 2.25 x 1.00 each max rough bla
 CUT-BAR-MID,Bars C4-B4,12,African Padauk,"24.0 x 2.00 x 1.00 each max rough blank","See MAR-C4 through MAR-B4 in family-spec.csv",Surface/thickness/profile/arch/drill,Keep grain direction consistent across the octave.
 CUT-BAR-TREBLE,Bars C5-B5,12,African Padauk,"17.0 x 1.75 x 1.00 each max rough blank","See MAR-C5 through MAR-B5 in family-spec.csv",Surface/thickness/profile/arch/drill,Smaller arch depths need careful Z-zero discipline.
 CUT-BAR-TOP,Bars C6,1,African Padauk,"12.5 x 1.50 x 1.00 rough blank","See MAR-C6 in family-spec.csv",Surface/thickness/profile/arch/drill,High bar is short and sensitive to over-sanding.
-CUT-RES-BASS,Resonators C3-B3,12,PVC or aluminum tube,"Cut 1.0 in oversize from family-spec.csv lengths","Final trim after bar tuning",Tube cut/deburr/cap/drill,Use selected tube bore, not blindly the workbook bore proxy.
+CUT-RES-BASS,Resonators C3-B3,12,PVC or aluminum tube,"Cut 1.0 in oversize from family-spec.csv lengths","Final trim after bar tuning",Tube cut/deburr/cap/drill,"Use selected tube bore, not blindly the workbook bore proxy."
 CUT-RES-MID,Resonators C4-B4,12,PVC or aluminum tube,"Cut 0.75 in oversize from family-spec.csv lengths","Final trim after bar tuning",Tube cut/deburr/cap/drill,Mark each tube with note and target Hz.
 CUT-RES-TREBLE,Resonators C5-C6,13,PVC or aluminum tube,"Cut 0.5 in oversize from family-spec.csv lengths","Final trim after bar tuning",Tube cut/deburr/cap/drill,Very short tubes may need larger bore or box coupling review.
 CUT-RAIL-BASS,Frame bass rail,1,Hard maple or laminated hardwood,TBD,"Node-following rail curve from CAD",Rip/plane/CNC drill,Do not freeze until bar spacing and tube diameters are selected.

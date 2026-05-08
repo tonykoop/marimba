@@ -1,5 +1,5 @@
 member_id,target_note,target_hz,predicted_length_in,stage,measured_hz,cents_error,tuner,environment,notes
-MAR-C3,C3,130.813,32.251,prebuild,,,,,Pilot low bar; record flat blank, post-arch, post-sand, final frame.
+MAR-C3,C3,130.813,32.251,prebuild,,,,,"Pilot low bar; record flat blank, post-arch, post-sand, final frame."
 MAR-Csharp3,C#3,138.591,31.333,prebuild,,,,,
 MAR-D3,D3,146.832,30.441,prebuild,,,,,
 MAR-Dsharp3,D#3,155.563,29.575,prebuild,,,,,
@@ -36,3 +36,18 @@ MAR-A5,A5,880.000,12.435,prebuild,,,,,
 MAR-Asharp5,A#5,932.328,12.081,prebuild,,,,,
 MAR-B5,B5,987.767,11.737,prebuild,,,,,
 MAR-C6,C6,1046.502,11.403,prebuild,,,,,Pilot high bar; validate shallow arch and short resonator behavior.
+MAR-C3,C3,130.813,32.251,flat_blank,,,,,Pilot material K check before underside arch.
+MAR-C3,C3,130.813,32.251,post_arch,,,,,CNC arch check; center thickness must remain at or above 0.250 in.
+MAR-C3,C3,130.813,32.251,post_sand,,,,,Hand-tuning check before resonator matching.
+MAR-C3,C3,130.813,32.251,resonator_coupled,,,,,C3 tube should reinforce without buzz after actual tube bore is selected.
+MAR-C3,C3,130.813,32.251,final_frame,,,,,Node support and frame buzz check.
+MAR-A4,A4,440.000,17.585,flat_blank,,,,,A4 reference material K check.
+MAR-A4,A4,440.000,17.585,post_arch,,,,,Mid-scale CNC arch check.
+MAR-A4,A4,440.000,17.585,post_sand,,,,,A4 hand-tuning reference; target is normal final sanding allowance.
+MAR-A4,A4,440.000,17.585,resonator_coupled,,,,,A4 tube should reinforce without shifting perceived pitch.
+MAR-A4,A4,440.000,17.585,final_frame,,,,,A4 node support and frame buzz check.
+MAR-C6,C6,1046.502,11.403,flat_blank,,,,,Treble material K check before shallow arch.
+MAR-C6,C6,1046.502,11.403,post_arch,,,,,Treble CNC arch check; avoid overly stiff or dead response.
+MAR-C6,C6,1046.502,11.403,post_sand,,,,,C6 hand-tuning check.
+MAR-C6,C6,1046.502,11.403,resonator_coupled,,,,,Short resonator behavior check.
+MAR-C6,C6,1046.502,11.403,final_frame,,,,,C6 node support and frame buzz check.

@@ -10,6 +10,7 @@ This repository is the Mode A v4.2 build packet for a marimba: tuned wooden free
 2. `family-spec.csv` is the 37-bar C3-C6 schedule extracted from the workbook formulas.
 3. `bom.csv`, `sourcing.csv`, and `cut-list.csv` separate stable specifications from supplier facts that should be verified before buying.
 4. `drawings/`, `cad/`, `cnc/`, `wolfram/`, and `site/` carry the technical handoff layers.
+5. `jig-decision.md` turns the fixture assumptions into pilot-build gates before the full Padauk run.
 
 Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-maker) catalog.
 
@@ -82,6 +83,7 @@ marimba/
 | CNC operation plan | generated, pre-CAM only |
 | SolidWorks handoff | prepared as CSV/Markdown contract, no native CAD yet |
 | Wolfram source | prepared as `.wl`; notebook execution pending local Wolfram |
+| Jig decision layer | done, see `jig-decision.md` |
 | Build photos | pending first shop build |
 | Measured tuning data | pending prototype validation |
 

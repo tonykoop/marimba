@@ -69,6 +69,7 @@ _Speaker notes:_ Identifies which shop pipeline(s) this instrument lives in: Bam
 - sourcing.csv: Supplier/search tracker with specs, price/date fields, lead time, substitutes, and risks.
 - cut-list.csv: Rough/final stock sizes, material, grain/orientation, operations, yield, and offcuts.
 - drawing-brief.md: Manufacturing drawing and technical product sketch brief.
+- jig-decision.md: Fixture decision record and pilot jig release gates.
 - assembly-manual.md: Shop-facing sequence, tools, fixtures, safety, tuning, finishing, and maintenance notes.
 - validation.csv: Target/measured values, tolerance, environment, result, and tuning/build action log.
 - supplier-rfq.md: Supplier email/request-for-quote starter.
@@ -125,6 +126,7 @@ _Speaker notes:_ Sizes scale via the master scale factor; tuning targets are fir
 - Design and assumptions
 - Source materials and hardware
 - Prepare stock, fixtures, and CNC/laser/lathe setup
+- Build the pilot jig set from jig-decision.md before committing full stock
 - Assemble, tune, finish, and validate
 
 ---
@@ -174,6 +176,7 @@ _Speaker notes:_ Sizes scale via the master scale factor; tuning targets are fir
 - Supplier price/availability not yet verified.
 - Generated images marked as concept placeholders.
 - Empirical corrections await measured prototype data.
+- Full 37-bar fixture is blocked until C3/A4/C6 pilot validation rows pass.
 
 ---
 

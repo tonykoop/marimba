@@ -10,7 +10,12 @@ Cut three pilot bars before committing the whole set: C3, A4, and C6. They bound
 - [ ] Confirm selected bar wood and moisture content.
 - [ ] Confirm actual resonator tube bore and update `family-spec.csv` if it differs from the workbook proxy.
 - [ ] Confirm CNC bed size, hold-down, bit length, and dust collection.
+- [ ] Review `jig-decision.md` and build only the pilot jigs required for C3, A4, and C6.
 - [ ] Print or open `drawings/arch-undercut-section.svg`, `drawings/resonator-layout.svg`, and `cnc/setup-sheet.md`.
+
+## Jig Decision Gate
+
+Use `jig-decision.md` as the shop stop/go sheet. Do not build the full 37-bar fixture, final frame, or fixed resonator stop system until the pilot rows in `validation.csv` have measured values for `flat_blank`, `post_arch`, `post_sand`, `resonator_coupled`, and `final_frame`.
 
 ## Bar Workflow
 

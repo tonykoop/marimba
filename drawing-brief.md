@@ -8,6 +8,7 @@ The current packet requires four build-critical drawing classes:
 2. `arch-undercut-section.svg` showing underside relief, edge thickness, center thickness, and tool assumptions.
 3. `resonator-layout.svg` showing first-pass tube lengths and note mapping.
 4. `frame-overview.svg` showing the frame datum plan, rail concept, bar order, and resonator clearance assumptions.
+5. Fixture/jig sketches derived from `jig-decision.md`: two-sided spoilboard, arch cradle, node-drilling backer, resonator V-block, and temporary validation frame.
 
 ## Drawing Standards
 
@@ -22,6 +23,7 @@ The current packet requires four build-critical drawing classes:
   - Thickness before arch: +/- 0.005 in.
   - Node hole placement: +/- 0.020 in first-pass, improve after pilot data.
 - CNC notes: bit diameter, stepover, Z-zero surface, tabs, workholding, and release checks.
+- Jig notes: which fixture carries datum A/B/C and which validation row releases the operation.
 
 ## Open Drawing Questions
 
@@ -29,6 +31,7 @@ The current packet requires four build-critical drawing classes:
 - Final frame rail curve and cross-member spacing.
 - Bar spacing and accidental/natural row layout.
 - Whether the first build uses a temporary validation frame or final furniture frame.
+- Whether the pilot jig set graduates unchanged to the full 37-bar run after C3/A4/C6 measurements.
 
 ## Source Files
 
@@ -37,3 +40,4 @@ The current packet requires four build-critical drawing classes:
 - `marimba-design-table.xlsx`
 - `cad/SolidWorks-MasterLayout-Plan.md`
 - `cnc/setup-sheet.md`
+- `jig-decision.md`

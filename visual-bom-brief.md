@@ -10,7 +10,8 @@ Create a visual BOM plate that lets another maker understand the marimba build a
 2. Exploded view showing bars above resonator tubes above frame rails.
 3. Detail inset for one bar: node holes, underside arch, grain direction.
 4. Detail inset for one resonator: tube, cap/stopper, mounting clearance.
-5. Material swatches: Padauk bar wood, tube material, rubber supports, frame wood.
+5. Detail inset for the pilot jig set: two-sided spoilboard, arch cradle, node-drilling backer, tube V-block.
+6. Material swatches: Padauk bar wood, tube material, rubber supports, frame wood, MDF/plywood fixture stock.
 
 ## BOM Rows To Show
 
@@ -21,6 +22,7 @@ Create a visual BOM plate that lets another maker understand the marimba build a
 | Support cord | Supplier image or shop photo | `bom.csv` |
 | Rubber supports | Supplier image or shop photo | `bom.csv` |
 | Frame rails | CAD render or shop photo | `cad/` |
+| Pilot jigs | CAD render, shop photo, or drawing placeholder | `jig-decision.md` |
 | CNC bits | Supplier image or shop photo | `bom.csv` |
 | Tuning tools | Shop photo | `validation.csv` workflow |
 
