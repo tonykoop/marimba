@@ -1,0 +1,9 @@
+source_id,item,candidate_source,source_status,next_check,notes
+S001,tonewood bar stock,local hardwood supplier or luthier offcut bin,needs_current_check,verify species/dimensions/moisture before purchase,"Padauk and hard maple are good first candidates."
+S002,aluminum bar stock,local metal supplier or online metals vendor,needs_current_check,verify alloy/thickness/flatness before purchase,"6061 is a practical first coupon material."
+S003,synthetic bar stock,plastics supplier or instrument repair source,needs_current_check,identify exact material and dimensions,"Do not assume Kelon-like behavior without material data."
+S004,rubber balls or mallet heads,sporting goods or percussion supplier,needs_current_check,measure diameter and hardness if possible,"Cut sacrificial samples first."
+S005,yarn/felt/leather covering,craft or upholstery supplier,needs_current_check,test wear and adhesive,"Could wrap interchangeable inserts instead of whole heads."
+S006,gasket sheet,industrial supply or hardware supplier,needs_current_check,check thickness and compression set,"Neoprene and silicone are first candidates."
+S007,resonator tube stock,hardware store or metal supplier,needs_current_check,check inner diameter and wall consistency,"PVC is fine for P0; aluminum may be used later."
+S008,toggle clamps/cam hardware,hardware or fixture supplier,needs_current_check,check clamp force and throw,"Must not over-compress bars or gasket."

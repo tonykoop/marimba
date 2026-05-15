@@ -1,0 +1,8 @@
+aperture_id,geometry,relative_open_area,expected_effect,best_first_pairing,test_status,notes
+A1,round open throat,0.85,strong coupling and high projection,wood bars,planned,"Start as the open control."
+A2,round medium throat,0.65,balanced coupling,synthetic bars,planned,"Likely useful general cassette throat."
+A3,round narrow throat,0.45,reduced sustain and lower resonator drive,aluminum bars,planned,"May tame metallic wash."
+A4,horizontal slot,0.45,directional coupling and possible attack focus,aluminum bars,planned,"Compare against A3 at the same area."
+A5,round throat with removable baffle washer,0.35_to_0.70,field-adjustable coupling,all materials,planned,"Useful if cassette-specific aperture plates are too many."
+A6,round throat with damping screen,0.60,reduced high-frequency energy,aluminum bars,defer,"Treat as experimental until clean baseline data exists."
+A7,no gasket or loose seal control,TBD,leakage reference,all materials,planned,"Use only as a comparison to prove the platen seal matters."

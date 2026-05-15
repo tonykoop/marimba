@@ -1,0 +1,12 @@
+gate_id,prototype_stage,claim,method,target,tolerance,status,next_action,evidence
+V001,L0_concept,"Sketch and clipping translated into packet architecture",review,"Readable design packet with modular cassette, platen, resonator bed, and hammer selector",pass_fail,pass,"Use this packet as P0 planning baseline","Mariba Piano clipping and 2026-05-14 sketch"
+V002,P0,"One tone bar can be tuned close enough for acoustic tests",tuner_measurement,"A4 or C5 target from tuning table","+/- 15 cents before fine tuning",measurement_required,"Cut sacrificial coupon and log measured pitch","TBD"
+V003,P0,"Free-free support node placement is quiet enough",audio_and_touch_test,"No buzz or muted fundamental at 22.4/77.6 percent support points",pass_fail,measurement_required,"Test cord/posts/felt supports on coupon","TBD"
+V004,P0,"Three hammer faces produce distinct attacks",recorded_A_B_test,"At least two clearly distinct attack profiles without double-strike",pass_fail,measurement_required,"Build manual-index hammer head and record each face","TBD"
+V005,P0,"Platen seal audibly improves resonator coupling",clamped_vs_unclamped_recording,"Clamped level/sustain improves versus loose control",pass_fail,measurement_required,"Build mini platen and A7 loose-seal control","TBD"
+V006,P0,"Gasket survives repeated compression",cycle_test,"No visible tearing or large seal loss after 50 clamp cycles",pass_fail,measurement_required,"Cycle gasket and remeasure coupling","TBD"
+V007,P0,"Resonator length estimate is close enough for trim",tuner_measurement,"Pipe resonance near target note","+/- 25 cents before trim",measurement_required,"Build adjustable tube and log correction","TBD"
+V008,P1,"Cassette registration repeats across width",install_remove_test,"Hammer strike remains centered after three cassette swaps","+/- 1 mm first target",measurement_required,"Add visual strike targets to 13-note cassette","TBD"
+V009,P1,"Platen pressure is reasonably uniform",feeler_gauge_or_pressure_paper,"All apertures seal under same lever throw",pass_fail,measurement_required,"Use pressure paper or gasket witness marks","TBD"
+V010,P1,"Left selector indexes all hammer heads reliably",cycle_test,"All 13 hammers select the requested face without half-index state",pass_fail,measurement_required,"Build selector rail only after P0 head is reliable","TBD"
+V011,P1,"Pinch points are controlled",safety_review,"No exposed dangerous pinch near platen, selector, or keys during normal play",pass_fail,measurement_required,"Add guards/stops before public demo","TBD"

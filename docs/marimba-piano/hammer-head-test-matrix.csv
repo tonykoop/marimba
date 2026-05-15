@@ -1,0 +1,8 @@
+face_id,material_candidate,hardness_guess,expected_attack,best_first_pairing,risk,test_status
+H1,yarn-wrapped rubber core,soft,warm rounded attack with reduced high partials,wood or synthetic bars,"May be too soft for small bars; wrapping can wear.",planned
+H2,solid bouncy-ball rubber,soft_medium,clear rebound with fundamental-heavy tone,aluminum or synthetic bars,"Too much bounce may double-strike; needs rebound test.",planned
+H3,silicone or urethane pad,soft_medium,controlled mellow strike,wood or aluminum bars,"Durometer must be selected; adhesive bond may fail.",planned
+H4,hard felt over wood core,medium,piano-like softened attack,wood bars,"May compact over time and change tone.",planned
+H5,soft maple or basswood face,medium_hard,woody xylophone-like bite,wood or synthetic bars,"Can dent softer bars; may be noisy mechanically.",planned
+H6,Delrin or phenolic face,hard,bright sharp attack,aluminum bars,"Can sound harsh; may damage finished wood bars.",planned
+H7,thin brass or aluminum cap over compliant backing,hard_experimental,tack-piano metallic transient,aluminum bars only,"High damage and glare risk; use only after sacrificial tests.",defer
