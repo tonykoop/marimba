@@ -15,7 +15,7 @@ mostly provenance, full export coverage, and measured pilot validation.
 | Parametric CAD starter | `cad/marimba-master.scad` | Prototype geometry starter, not native CAD or CAM verified. |
 | Design table | `cad/design-table-inputs.csv`, `cad/sw-global-variables.csv`, `family-spec.csv` | Workbook-derived prototype authority until pilot data revises it. |
 | Vector previews | `drawings/*.svg` | Derived previews from the note schedule, not DXF/CAM release. |
-| Pilot DXF | `drawings/marimba-pilot-plate.dxf` | C3/A4/C6 layout review only; full 37-bar export still pending. |
+| Pilot DXF | `drawings/marimba-pilot-plate.dxf`, `scripts/validate_marimba_pilot_dxf.py`, `docs/cad-dxf-authority-review.md` | C3/A4/C6 layout now has a repo-local design-table trace check; full 37-bar export, CAM review, and measured tuning remain pending. |
 | Validation plan | `validation.csv`, `validation-loop.csv`, `cnc/operations.csv` | Measurement-required; no bar tuning results logged yet. |
 | Explorer | `explorer.html` | Present and updated with authority/provenance files. |
 | Capstone manifest | `capstone-manifest.json` | Repo-relative artifact inventory. |
@@ -41,3 +41,6 @@ mostly provenance, full export coverage, and measured pilot validation.
 - Do not use generated images or renders as fabrication authority.
 - Do not release the full 37-bar CNC sequence until the C3/A4/C6 pilot loop is
   measured and reviewed.
+- The pilot DXF traceability check confirms outline and node dimensions against
+  `cad/design-table-inputs.csv`; it does not validate CAM, toolpaths, arch
+  machining, frame geometry, resonator coupling, or measured tuning.

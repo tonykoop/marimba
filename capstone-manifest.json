@@ -39,7 +39,9 @@
     "cad/mcp-session-log.md",
     "cad/marimba-master.scad",
     "cad/design-table-inputs.csv",
+    "docs/cad-dxf-authority-review.md",
     "drawings/marimba-pilot-plate.dxf",
+    "scripts/validate_marimba_pilot_dxf.py",
     "explorer.html"
   ],
   "outputs": {
@@ -61,8 +63,8 @@
     {
       "gate": "vector_design_plate_dxf",
       "status": "partial",
-      "evidence": "drawings/marimba-pilot-plate.dxf",
-      "remaining": "Export full 37-bar drawings/marimba.dxf and register it."
+      "evidence": "drawings/marimba-pilot-plate.dxf; scripts/validate_marimba_pilot_dxf.py; docs/cad-dxf-authority-review.md",
+      "remaining": "Export full 37-bar drawings/marimba.dxf, review CAM/toolpath assumptions, and register it."
     },
     {
       "gate": "hero_render",
