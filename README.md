@@ -11,6 +11,7 @@ This repository is the Mode A v4.2 build packet for a marimba: tuned wooden free
 3. `bom.csv`, `sourcing.csv`, and `cut-list.csv` separate stable specifications from supplier facts that should be verified before buying.
 4. `drawings/`, `cad/`, `cnc/`, `wolfram/`, and `site/` carry the technical handoff layers.
 5. `jig-decision.md` turns the fixture assumptions into pilot-build gates before the full Padauk run.
+6. `visual-output-register.csv`, `validation-loop.csv`, `docs/v5-readiness.md`, and `cad/mcp-session-log.md` make the V5 promotion boundary explicit.
 
 Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-maker) catalog.
 
@@ -58,6 +59,8 @@ marimba/
 |-- sourcing.csv
 |-- cut-list.csv
 |-- validation.csv
+|-- validation-loop.csv
+|-- visual-output-register.csv
 |-- assembly-manual.md
 |-- supplier-rfq.md
 |-- visual-bom-brief.md
@@ -67,6 +70,7 @@ marimba/
 |-- cad/
 |-- cnc/
 |-- data/
+|-- docs/
 |-- drawings/
 |-- images/
 |-- site/
@@ -77,15 +81,27 @@ marimba/
 
 | Area | Status |
 | --- | --- |
+| V5 status | explorer/prototype scaffold only; not a V5 build-packet candidate |
 | Workbook scaffold | done, source table in `marimba-design-table.xlsx` |
 | Guided intake | done, see `data/design-intake.json` |
 | C3-C6 bar schedule | done, see `family-spec.csv` |
+| Visual authority register | done, see `visual-output-register.csv` |
+| Pilot DXF | C3/A4/C6 only, see `drawings/marimba-pilot-plate.dxf` |
+| Validation loop | measurement-required, see `validation-loop.csv` |
+| V5 readiness ledger | scaffolded, see `docs/v5-readiness.md` |
+| MCP provenance | scaffolded with no live sessions yet, see `cad/mcp-session-log.md` |
 | CNC operation plan | generated, pre-CAM only |
 | SolidWorks handoff | prepared as CSV/Markdown contract, no native CAD yet |
 | Wolfram source | prepared as `.wl`; notebook execution pending local Wolfram |
 | Jig decision layer | done, see `jig-decision.md` |
 | Build photos | pending first shop build |
 | Measured tuning data | pending prototype validation |
+
+The current fabrication-authority chain is limited to workbook-derived design
+tables, the OpenSCAD starter, and the pilot DXF plate registered in
+`visual-output-register.csv`. Generated or rendered visuals, when added later,
+are concept/support artifacts only and do not control dimensions, node
+locations, resonator lengths, or CNC toolpaths.
 
 ## License
 
