@@ -4,7 +4,7 @@
 
 Build a 37-bar C3-C6 marimba packet from the existing workbook design table. The first build target is a CNC-friendly instrument with African Padauk bars, parabolic underside arch undercuts, drilled node supports, quarter-wave resonators, and a frame layout that can become a SolidWorks master sketch.
 
-The useful boundary for this packet is "build-ready documentation, not finished CAD." Native SolidWorks files do not exist yet. The CAD folder defines the global-variable and design-table contract Tony can use to build the real model.
+The useful boundary for this packet is "prototype/shop-planning documentation, not finished CAD or measured build authority." Native SolidWorks files do not exist yet. The CAD folder defines the global-variable and design-table contract Tony can use to build the real model after pilot measurements review the workbook predictions.
 
 ## Design Intake
 

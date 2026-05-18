@@ -1,8 +1,26 @@
 {
-  "packet_dir": "/mnt/c/Users/Tony/Documents/GitHub/marimba",
+  "schema": "instrument-maker-capstone-manifest-v5-explorer",
+  "repo": "tonykoop/marimba",
+  "issue": 2,
   "title": "Marimba CNC Bar And Resonator Build Packet",
-  "generated": "2026-05-06",
+  "generated": "2026-05-18",
+  "readiness": {
+    "current_label": "V5 explorer/prototype scaffold",
+    "not_yet": "V5 build-packet candidate",
+    "reason": "Measured tuning data, full DXF/vector export, render/diagram/image deliverables, annotated assembly plate, and live MCP provenance are not complete."
+  },
+  "authority": {
+    "fabrication_authority_register": "visual-output-register.csv",
+    "prototype_design_tables": [
+      "family-spec.csv",
+      "cad/design-table-inputs.csv",
+      "cad/sw-global-variables.csv"
+    ],
+    "pilot_dxf": "drawings/marimba-pilot-plate.dxf",
+    "non_authority_visual_rule": "Generated images, renders, and previews are concept/support only unless derived from registered CAD/DXF/design-table authority."
+  },
   "files_included": [
+    "README.md",
     "design.md",
     "bom.csv",
     "sourcing.csv",
@@ -10,23 +28,77 @@
     "drawing-brief.md",
     "assembly-manual.md",
     "validation.csv",
+    "validation-loop.csv",
+    "visual-output-register.csv",
     "supplier-rfq.md",
     "visual-bom-brief.md",
-    "README.md",
     "family-spec.csv",
     "photo-shotlist.md",
-    "risks.md"
+    "risks.md",
+    "docs/v5-readiness.md",
+    "cad/mcp-session-log.md",
+    "cad/marimba-master.scad",
+    "cad/design-table-inputs.csv",
+    "drawings/marimba-pilot-plate.dxf",
+    "explorer.html"
   ],
   "outputs": {
-    "capstone_deck_markdown": "/mnt/c/Users/Tony/Documents/GitHub/marimba/capstone-deck.md",
-    "capstone_deck_pptx": "/mnt/c/Users/Tony/Documents/GitHub/marimba/capstone-deck.pptx",
-    "print_packet_markdown": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.md",
-    "print_packet_html": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.html",
-    "print_packet_pdf": "/mnt/c/Users/Tony/Documents/GitHub/marimba/print-packet.pdf"
+    "capstone_deck_markdown": "capstone-deck.md",
+    "capstone_deck_pptx": "capstone-deck.pptx",
+    "print_packet_markdown": "print-packet.md",
+    "print_packet_html": "print-packet.html",
+    "print_packet_pdf": "print-packet.pdf",
+    "studio_explorer": "explorer.html",
+    "site": "site/index.html"
   },
+  "v5_gates": [
+    {
+      "gate": "parametric_cad",
+      "status": "partial",
+      "evidence": "cad/marimba-master.scad",
+      "remaining": "Review every critical dimension against family-spec.csv and export reviewed STL/native CAD."
+    },
+    {
+      "gate": "vector_design_plate_dxf",
+      "status": "partial",
+      "evidence": "drawings/marimba-pilot-plate.dxf",
+      "remaining": "Export full 37-bar drawings/marimba.dxf and register it."
+    },
+    {
+      "gate": "hero_render",
+      "status": "missing",
+      "evidence": "",
+      "remaining": "Create from reviewed CAD/STL and register as non-fabrication."
+    },
+    {
+      "gate": "exploded_diagram",
+      "status": "missing",
+      "evidence": "",
+      "remaining": "Create from reviewed CAD/STL and register as non-fabrication."
+    },
+    {
+      "gate": "ai_artistic_shots",
+      "status": "missing",
+      "evidence": "",
+      "remaining": "Create concept-only image assets with no dimensional authority."
+    },
+    {
+      "gate": "annotated_print_plate",
+      "status": "missing",
+      "evidence": "",
+      "remaining": "Create print-packet/assembly-plate.pdf with callouts tied to design-table cells."
+    },
+    {
+      "gate": "mcp_provenance_log",
+      "status": "scaffolded",
+      "evidence": "cad/mcp-session-log.md",
+      "remaining": "Replace TBD rows with real session rows as each MCP artifact is produced."
+    }
+  ],
   "notes": [
     "PPTX was generated from capstone-deck.md with Pandoc because python-pptx is not installed in the WSL Python runtime.",
     "PDF was generated as a text-first shop packet from print-packet.md because reportlab/weasyprint are not installed and headless LibreOffice PDF export was unavailable in the sandbox.",
-    "Use print-packet.html for browser review and higher-fidelity browser print-to-PDF when available."
+    "Use print-packet.html for browser review and higher-fidelity browser print-to-PDF when available.",
+    "Stash catalog row for marimba showed a malformed explorer.html Library-link attempt; the useful link intent was preserved in explorer.html while keeping the GitHub action valid."
   ]
 }
