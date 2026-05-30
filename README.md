@@ -11,7 +11,9 @@ This repository is the Mode A v4.2 build packet for a marimba: tuned wooden free
 3. `bom.csv`, `sourcing.csv`, and `cut-list.csv` separate stable specifications from supplier facts that should be verified before buying.
 4. `drawings/`, `cad/`, `cnc/`, `wolfram/`, and `site/` carry the technical handoff layers.
 5. `jig-decision.md` turns the fixture assumptions into pilot-build gates before the full Padauk run.
-6. `visual-output-register.csv`, `validation-loop.csv`, `docs/v5-readiness.md`, and `cad/mcp-session-log.md` make the V5 promotion boundary explicit.
+6. `visual-output-register.csv`, `docs/v5-authority-register.csv`,
+   `validation-loop.csv`, `docs/v5-readiness.md`, and
+   `cad/mcp-session-log.md` make the V5 promotion boundary explicit.
 
 Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-maker) catalog.
 
@@ -86,6 +88,7 @@ marimba/
 | Guided intake | done, see `data/design-intake.json` |
 | C3-C6 bar schedule | done, see `family-spec.csv` |
 | Visual authority register | done, see `visual-output-register.csv` |
+| Issue #5 V5 authority register | reviewed packet surface, see `docs/v5-authority-register.csv` |
 | Pilot DXF | C3/A4/C6 only, see `drawings/marimba-pilot-plate.dxf` |
 | Validation loop | measurement-required, see `validation-loop.csv` |
 | V5 readiness ledger | scaffolded, see `docs/v5-readiness.md` |
@@ -97,11 +100,12 @@ marimba/
 | Build photos | pending first shop build |
 | Measured tuning data | pending prototype validation |
 
-The current fabrication-authority chain is limited to workbook-derived design
-tables, the OpenSCAD starter, and the pilot DXF plate registered in
-`visual-output-register.csv`. Generated or rendered visuals, when added later,
-are concept/support artifacts only and do not control dimensions, node
-locations, resonator lengths, or CNC toolpaths.
+The current CAD/DXF authority chain is a reviewed packet surface, not measured
+fabrication authority. Workbook-derived design tables, the OpenSCAD starter,
+and the pilot DXF plate are registered as `pending_measurement` in
+`visual-output-register.csv` and `docs/v5-authority-register.csv`. Generated or
+rendered visuals, when added later, are concept/support artifacts only and do
+not control dimensions, node locations, resonator lengths, or CNC toolpaths.
 
 ## License
 
