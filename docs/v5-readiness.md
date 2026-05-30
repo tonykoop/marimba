@@ -1,7 +1,7 @@
 # Marimba V5 Readiness Notes
 
-Current readiness: V5 explorer/prototype scaffold, not a V5 build-packet
-candidate yet.
+Current readiness: V5 explorer/prototype scaffold with issue #5 authority
+register, not a V5 build-packet candidate yet.
 
 The repo has a strong v4 packet base: workbook-derived note schedule,
 OpenSCAD starter, SolidWorks-ready CSVs, SVG drawing previews, CNC operation
@@ -15,6 +15,7 @@ mostly provenance, full export coverage, and measured pilot validation.
 | Parametric CAD starter | `cad/marimba-master.scad` | Prototype geometry starter, not native CAD or CAM verified. |
 | Design table | `cad/design-table-inputs.csv`, `cad/sw-global-variables.csv`, `family-spec.csv` | Workbook-derived prototype authority until pilot data revises it. |
 | Vector previews | `drawings/*.svg` | Derived previews from the note schedule, not DXF/CAM release. |
+| Issue #5 authority register | `docs/v5-authority-register.csv`, `docs/issue-5-v5-packet-surface.md` | Reviewed packet surface; CAD/DXF/design-table authority is explicitly pending measurement. |
 | Pilot DXF | `drawings/marimba-pilot-plate.dxf`, `scripts/validate_marimba_pilot_dxf.py`, `docs/cad-dxf-authority-review.md` | C3/A4/C6 layout now has a repo-local design-table trace check; full 37-bar export, CAM review, and measured tuning remain pending. |
 | Validation plan | `validation.csv`, `validation-loop.csv`, `cnc/operations.csv` | Measurement-required; no bar tuning results logged yet. |
 | Explorer | `explorer.html` | Present and updated with authority/provenance files. |
@@ -25,7 +26,7 @@ mostly provenance, full export coverage, and measured pilot validation.
 | V5 deliverable from issue #2 | Status in this lane | Remaining gate |
 | --- | --- | --- |
 | Parametric CAD master | Partial | Review/update `cad/marimba-master.scad` so every critical dimension is programmatically traced to the tables. |
-| Vector design plate plus DXF | Partial | `drawings/marimba-pilot-plate.dxf` covers pilot bars only; full `drawings/marimba.dxf` remains pending. |
+| Vector design plate plus DXF | Partial | `drawings/marimba-pilot-plate.dxf` covers pilot bars only; full `drawings/marimba.dxf` remains pending. CAD/DXF authority is `pending_measurement` in `docs/v5-authority-register.csv`. |
 | Hero render | Missing | Create from reviewed CAD/STL and register as non-fabrication. |
 | Exploded diagram | Missing | Create from reviewed CAD/STL and register as non-fabrication. |
 | AI artistic shots | Missing | Create only as concept/story support; no dimensional authority. |
@@ -44,3 +45,6 @@ mostly provenance, full export coverage, and measured pilot validation.
 - The pilot DXF traceability check confirms outline and node dimensions against
   `cad/design-table-inputs.csv`; it does not validate CAM, toolpaths, arch
   machining, frame geometry, resonator coupling, or measured tuning.
+- Do not promote `cad/marimba-master.scad` or `drawings/marimba-pilot-plate.dxf`
+  beyond `pending_measurement` until real shop measurements and CAD/CAM review
+  are recorded.
