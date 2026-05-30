@@ -4,7 +4,7 @@
 ClearAll["Global`*"];
 
 packetDir = DirectoryName[$InputFileName] /. "" -> NotebookDirectory[];
-If[!StringQ[packetDir], packetDir = "/mnt/c/Users/Tony/Documents/GitHub/marimba/wolfram/"];
+If[!StringQ[packetDir], packetDir = "/mnt/c/Users/Tony/Documents/GitHub/instruments/idiophones/marimba/wolfram/"];
 repoDir = ParentDirectory[packetDir];
 
 metadata = <|
