@@ -30,7 +30,7 @@ mostly provenance, full export coverage, and measured pilot validation.
 | Hero render | Missing | Create from reviewed CAD/STL and register as non-fabrication. |
 | Exploded diagram | Missing | Create from reviewed CAD/STL and register as non-fabrication. |
 | AI artistic shots | Missing | Create only as concept/story support; no dimensional authority. |
-| Annotated print plate | Missing | Create `print-packet/assembly-plate.pdf` with callouts tied to design-table cells. |
+| Annotated print plate | Scaffolded only | `docs/issue-1-annotated-print-plate-brief.md` and register rows define the Photoshop-MCP contract; no plate was generated. |
 | MCP provenance log | Scaffolded | `cad/mcp-session-log.md` has placeholder rows; future MCP sessions must replace TBD values. |
 
 ## Honesty Boundary
@@ -45,6 +45,9 @@ mostly provenance, full export coverage, and measured pilot validation.
 - The pilot DXF traceability check confirms outline and node dimensions against
   `cad/design-table-inputs.csv`; it does not validate CAM, toolpaths, arch
   machining, frame geometry, resonator coupling, or measured tuning.
+- Do not claim a Photoshop-MCP annotated print plate exists until a real
+  session creates or reviews `print-packet/assembly-plate.pdf` and logs
+  provenance in `cad/mcp-session-log.md`.
 - Do not promote `cad/marimba-master.scad` or `drawings/marimba-pilot-plate.dxf`
   beyond `pending_measurement` until real shop measurements and CAD/CAM review
   are recorded.
