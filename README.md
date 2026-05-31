@@ -81,8 +81,11 @@ marimba/
 
 ## Status
 
+**Readiness: L1** — concept / scaffold. Acoustic predictions are empirical estimates; no validated physical build or measured outputs yet. Not a V5 build-packet candidate.
+
 | Area | Status |
 | --- | --- |
+| Readiness level | **L1** (concept/scaffold; estimates only) |
 | V5 status | explorer/prototype scaffold only; not a V5 build-packet candidate |
 | Workbook scaffold | done, source table in `marimba-design-table.xlsx` |
 | Guided intake | done, see `data/design-intake.json` |
