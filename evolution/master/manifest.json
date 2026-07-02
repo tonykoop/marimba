@@ -1,0 +1,34 @@
+{
+  "product": "marimba",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "rev-A (pre-commit intake, 2026-07-01)",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/marimba-master.scad",
+      "format": "openscad-source",
+      "sha256": "21992d58f3f68e8395d4e0ee72059a1bea4e34cf695be2ac47890f6cfe9047b7",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Existing master (kept, not rewritten per percussion addendum EXISTING MASTERS rule). Starter for spacing + representative C3/A4/C6 assemblies. openscad render check: pass (exit 0)."
+    },
+    {
+      "path": "marimba-design-table.xlsx",
+      "format": "design-table",
+      "sha256": "18026262836f8fb903d49de57e870309a49bbbb24a219b928fb5d9400e56b172",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Source workbook for the 37-bar C3-C6 schedule; prototype authority pending pilot tuning measurements."
+    },
+    {
+      "path": "wolfram/marimba-wolfram-model.wl",
+      "format": "wolfram-source",
+      "sha256": "e211aeb08ffb0057a10f7bf0d1b9ce7380d42cedbd7e4a81f1abb71efba06854",
+      "authority": "reference_only",
+      "lossy": false,
+      "notes": "Free-free beam + quarter-wave resonator model; source-only. Byte-identical to wolfram/instrument-model.wl (leftover duplicate, not the canonical entry point). marimba-starter.wl loads this file."
+    }
+  ],
+  "notes": "OpenSCAD source + design-table workbook are the current masters; no STEP export yet (SolidWorks export is Windows-side, out of scope this pass). Register rows for the Wolfram files were NOT added this pass — visual-output-register.csv had an uncommitted, not-mine change at session start (see cad/mcp-session-log.md); avoided touching that file per the dirty-repo rule. Gate A (Alpha workspace compile) not yet run."
+}

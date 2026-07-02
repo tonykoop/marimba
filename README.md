@@ -2,6 +2,8 @@
 
 > A workbook-derived 37-bar C3-C6 marimba packet for CNC-cut Padauk bars, 3D arch undercuts, tuned quarter-wave resonators, and a SolidWorks-ready master-layout handoff.
 
+Status: L1 concept packet
+
 ## What This Is
 
 This repository is the Mode A v4.2 build packet for a marimba: tuned wooden free-free bars suspended at their nodes, with a matched resonator under each note. It turns the existing `marimba-design-table.xlsx` scaffold into a shop-facing documentation set:
@@ -74,10 +76,13 @@ marimba/
 |-- data/
 |-- docs/
 |-- drawings/
+|-- evolution/
 |-- images/
 |-- site/
 `-- wolfram/
 ```
+
+`evolution/` - Stage 0 intake only (manifest, design-intent, revisions); Gate A not yet run.
 
 ## Status
 
